@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net471;netcoreapp2.0</TargetFrameworks>
+    <RootNamespace>NativeInterop</RootNamespace>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\NativeInterop.NativeLib\bin\$(PlatformTarget)\$(Configuration)\NativeInterop.NativeLib.dll" Link="NativeInterop.NativeLib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

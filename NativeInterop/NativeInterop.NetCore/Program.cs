@@ -6,7 +6,7 @@ namespace NativeInterop
     {
         private static void Main()
         {
-            BenchmarkHelper.ValidateAndRun<NativeInteropBench>();
+            BenchmarkHelper.ValidateAndRun<NativeInteropNetCoreBench>();
         }
     }
 }

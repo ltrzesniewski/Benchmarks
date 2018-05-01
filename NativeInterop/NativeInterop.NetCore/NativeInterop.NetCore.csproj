@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>NativeInterop</RootNamespace>
+    <AssemblyName>NativeInterop.NetCore</AssemblyName>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.10.14" />
+    <PackageReference Include="Fody" Version="3.0.3" />
+    <PackageReference Include="InlineIL.Fody" Version="0.6.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Benchmarks.Common\Benchmarks.Common.csproj" />
+    <ProjectReference Include="..\NativeInterop.Common\NativeInterop.Common.csproj" />
+  </ItemGroup>
+</Project>

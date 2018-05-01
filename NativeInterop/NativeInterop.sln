@@ -3,11 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NativeInterop", "NativeInterop\NativeInterop.csproj", "{3048EF5C-D4B1-4957-B13F-B76652D100F3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D6FB5054-E261-4C92-9280-343B6BDA6834} = {D6FB5054-E261-4C92-9280-343B6BDA6834}
-	EndProjectSection
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeInterop.NativeLib", "NativeInterop.NativeLib\NativeInterop.NativeLib.vcxproj", "{D6FB5054-E261-4C92-9280-343B6BDA6834}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeInterop.CppCli", "NativeInterop.CppCli\NativeInterop.CppCli.vcxproj", "{D451FFF2-6F56-41E9-A184-5B6755520400}"
@@ -17,16 +12,21 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeInterop.CppCli", "Nat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.Common", "..\Benchmarks.Common\Benchmarks.Common.csproj", "{E087BB82-F12C-4319-9626-170740D0B3FB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NativeInterop.Common", "NativeInterop.Common\NativeInterop.Common.csproj", "{9AF72D50-CEDF-4FBB-8F1B-D7E2EECCCC1C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D6FB5054-E261-4C92-9280-343B6BDA6834} = {D6FB5054-E261-4C92-9280-343B6BDA6834}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NativeInterop.NetFwk", "NativeInterop.NetFwk\NativeInterop.NetFwk.csproj", "{4B26F769-70FF-4C6C-83B3-046EE6F4F596}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NativeInterop.NetCore", "NativeInterop.NetCore\NativeInterop.NetCore.csproj", "{92E5EADA-84F1-447F-BB8B-72D7349B9665}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3048EF5C-D4B1-4957-B13F-B76652D100F3}.Debug|x64.ActiveCfg = Debug|x64
-		{3048EF5C-D4B1-4957-B13F-B76652D100F3}.Debug|x64.Build.0 = Debug|x64
-		{3048EF5C-D4B1-4957-B13F-B76652D100F3}.Release|x64.ActiveCfg = Release|x64
-		{3048EF5C-D4B1-4957-B13F-B76652D100F3}.Release|x64.Build.0 = Release|x64
 		{D6FB5054-E261-4C92-9280-343B6BDA6834}.Debug|x64.ActiveCfg = Debug|x64
 		{D6FB5054-E261-4C92-9280-343B6BDA6834}.Debug|x64.Build.0 = Debug|x64
 		{D6FB5054-E261-4C92-9280-343B6BDA6834}.Release|x64.ActiveCfg = Release|x64
@@ -39,6 +39,18 @@ Global
 		{E087BB82-F12C-4319-9626-170740D0B3FB}.Debug|x64.Build.0 = Debug|Any CPU
 		{E087BB82-F12C-4319-9626-170740D0B3FB}.Release|x64.ActiveCfg = Release|Any CPU
 		{E087BB82-F12C-4319-9626-170740D0B3FB}.Release|x64.Build.0 = Release|Any CPU
+		{9AF72D50-CEDF-4FBB-8F1B-D7E2EECCCC1C}.Debug|x64.ActiveCfg = Debug|x64
+		{9AF72D50-CEDF-4FBB-8F1B-D7E2EECCCC1C}.Debug|x64.Build.0 = Debug|x64
+		{9AF72D50-CEDF-4FBB-8F1B-D7E2EECCCC1C}.Release|x64.ActiveCfg = Release|x64
+		{9AF72D50-CEDF-4FBB-8F1B-D7E2EECCCC1C}.Release|x64.Build.0 = Release|x64
+		{4B26F769-70FF-4C6C-83B3-046EE6F4F596}.Debug|x64.ActiveCfg = Debug|x64
+		{4B26F769-70FF-4C6C-83B3-046EE6F4F596}.Debug|x64.Build.0 = Debug|x64
+		{4B26F769-70FF-4C6C-83B3-046EE6F4F596}.Release|x64.ActiveCfg = Release|x64
+		{4B26F769-70FF-4C6C-83B3-046EE6F4F596}.Release|x64.Build.0 = Release|x64
+		{92E5EADA-84F1-447F-BB8B-72D7349B9665}.Debug|x64.ActiveCfg = Debug|x64
+		{92E5EADA-84F1-447F-BB8B-72D7349B9665}.Debug|x64.Build.0 = Debug|x64
+		{92E5EADA-84F1-447F-BB8B-72D7349B9665}.Release|x64.ActiveCfg = Release|x64
+		{92E5EADA-84F1-447F-BB8B-72D7349B9665}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

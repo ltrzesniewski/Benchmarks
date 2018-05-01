@@ -7,7 +7,7 @@ using InlineIL;
 namespace NativeInterop
 {
     [SuppressUnmanagedCodeSecurity]
-    public unsafe class NativeInteropBench
+    public unsafe class NativeInteropNetFwkBench
     {
         private const int ValueA = 14;
         private const int ValueB = 3;

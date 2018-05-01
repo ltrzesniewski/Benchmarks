@@ -68,7 +68,7 @@ namespace Benchmarks.Common
             if (title == null)
                 return;
 
-            var titleLine = $"## Summary: {title}";
+            var titleLine = $"## {title}";
 
             var filePath = Path.Combine(solutionDir, "README.md");
 
@@ -86,7 +86,7 @@ namespace Benchmarks.Common
                 {
                     if (!foundSummary)
                     {
-                        if (line.StartsWith(titleLine))
+                        if (line == titleLine)
                         {
                             foundSummary = true;
                             inOldSummary = true;

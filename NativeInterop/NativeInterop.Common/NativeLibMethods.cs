@@ -5,7 +5,7 @@ using System.Security;
 
 namespace NativeInterop
 {
-    internal static class NativeLibMethods
+    public static class NativeLibMethods
     {
         public const string LibraryName = "NativeInterop.NativeLib.dll";
 

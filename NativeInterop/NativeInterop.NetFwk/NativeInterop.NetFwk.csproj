@@ -3,17 +3,10 @@
     <TargetFramework>net471</TargetFramework>
     <OutputType>Exe</OutputType>
     <RootNamespace>NativeInterop</RootNamespace>
-    <AssemblyName>NativeInterop</AssemblyName>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <LangVersion>latest</LangVersion>
+    <AssemblyName>NativeInterop.NetFwk</AssemblyName>
     <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
-  <ItemGroup>
-    <None Include="..\NativeInterop.NativeLib\bin\$(Platform)\$(Configuration)\NativeInterop.NativeLib.dll" Link="NativeInterop.NativeLib.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.10.14" />
     <PackageReference Include="Fody" Version="3.0.3" />
@@ -21,6 +14,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Benchmarks.Common\Benchmarks.Common.csproj" />
+    <ProjectReference Include="..\NativeInterop.Common\NativeInterop.Common.csproj" />
     <ProjectReference Include="..\NativeInterop.CppCli\NativeInterop.CppCli.vcxproj" />
   </ItemGroup>
 </Project>
