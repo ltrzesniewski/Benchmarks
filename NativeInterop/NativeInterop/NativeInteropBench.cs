@@ -63,5 +63,9 @@ namespace NativeInterop
             IL.Emit.Calli(new StandAloneMethodSig(CallingConvention.StdCall, typeof(int), typeof(int), typeof(int)));
             return IL.Return<int>();
         }
+
+        [Benchmark]
+        public int CppCli()
+            => NativeInterop.CppCli.Multiply(ValueA, ValueB);
     }
 }
