@@ -65,7 +65,9 @@ namespace NativeInterop
         }
 
         [Benchmark]
-        public int CppCli()
-            => NativeInterop.CppCli.Multiply(ValueA, ValueB);
+        public int CppCli() => NativeInterop.CppCli.Multiply(ValueA, ValueB);
+
+        [Benchmark]
+        public int CppCliDirect() => NativeInterop.CppCli.MultiplyDirect(ValueA, ValueB);
     }
 }

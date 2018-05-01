@@ -7,5 +7,6 @@ namespace NativeInterop {
 	{
 	public:
 		static std::int32_t __clrcall Multiply(std::int32_t a, std::int32_t b);
+		static std::int32_t __clrcall MultiplyDirect(std::int32_t a, std::int32_t b);
 	};
 }
