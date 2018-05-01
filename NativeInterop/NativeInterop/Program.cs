@@ -1,4 +1,4 @@
-﻿using BenchmarkDotNet.Running;
+﻿using Benchmarks.Common;
 
 namespace NativeInterop
 {
@@ -6,8 +6,7 @@ namespace NativeInterop
     {
         private static void Main()
         {
-            NativeInteropBench.Validate();
-            BenchmarkRunner.Run<NativeInteropBench>();
+            BenchmarkHelper.ValidateAndRun<NativeInteropBench>();
         }
     }
 }

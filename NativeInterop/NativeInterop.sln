@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeInterop", "NativeInterop\NativeInterop.csproj", "{3048EF5C-D4B1-4957-B13F-B76652D100F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NativeInterop", "NativeInterop\NativeInterop.csproj", "{3048EF5C-D4B1-4957-B13F-B76652D100F3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D6FB5054-E261-4C92-9280-343B6BDA6834} = {D6FB5054-E261-4C92-9280-343B6BDA6834}
 	EndProjectSection
@@ -14,6 +14,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeInterop.CppCli", "Nat
 	ProjectSection(ProjectDependencies) = postProject
 		{D6FB5054-E261-4C92-9280-343B6BDA6834} = {D6FB5054-E261-4C92-9280-343B6BDA6834}
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.Common", "..\Benchmarks.Common\Benchmarks.Common.csproj", "{E087BB82-F12C-4319-9626-170740D0B3FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D451FFF2-6F56-41E9-A184-5B6755520400}.Debug|x64.Build.0 = Debug|x64
 		{D451FFF2-6F56-41E9-A184-5B6755520400}.Release|x64.ActiveCfg = Release|x64
 		{D451FFF2-6F56-41E9-A184-5B6755520400}.Release|x64.Build.0 = Release|x64
+		{E087BB82-F12C-4319-9626-170740D0B3FB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E087BB82-F12C-4319-9626-170740D0B3FB}.Debug|x64.Build.0 = Debug|Any CPU
+		{E087BB82-F12C-4319-9626-170740D0B3FB}.Release|x64.ActiveCfg = Release|Any CPU
+		{E087BB82-F12C-4319-9626-170740D0B3FB}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

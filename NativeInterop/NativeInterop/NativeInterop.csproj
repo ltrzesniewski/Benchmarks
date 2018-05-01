@@ -20,6 +20,7 @@
     <PackageReference Include="InlineIL.Fody" Version="0.6.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Benchmarks.Common\Benchmarks.Common.csproj" />
     <ProjectReference Include="..\NativeInterop.CppCli\NativeInterop.CppCli.vcxproj" />
   </ItemGroup>
 </Project>
