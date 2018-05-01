@@ -4,16 +4,18 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security;
 using BenchmarkDotNet.Attributes;
+using InlineIL;
 
 namespace NativeInterop
 {
     [SuppressUnmanagedCodeSecurity]
-    public class NativeInteropBench
+    public unsafe class NativeInteropBench
     {
         private const int ValueA = 14;
         private const int ValueB = 3;
 
         // make sure we have beforefieldinit
+        private static readonly void* MultiplyPtr = NativeLibMethods.MultiplyPtr.ToPointer();
         private static readonly NativeLibMethods.MultiplyDelegate MultiplyDelegate = NativeLibMethods.Multiply;
 
         public static void Validate()
@@ -50,5 +52,16 @@ namespace NativeInterop
 
         [Benchmark]
         public int Delegate() => MultiplyDelegate(ValueA, ValueB);
+
+        [Benchmark]
+        [SuppressUnmanagedCodeSecurity]
+        public int Calli()
+        {
+            IL.Push(ValueA);
+            IL.Push(ValueB);
+            IL.Push(MultiplyPtr);
+            IL.Emit.Calli(new StandAloneMethodSig(CallingConvention.StdCall, typeof(int), typeof(int), typeof(int)));
+            return IL.Return<int>();
+        }
     }
 }

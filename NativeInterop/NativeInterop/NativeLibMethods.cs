@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Security;
 
@@ -11,12 +12,15 @@ namespace NativeInterop
         [SuppressMessage("ReSharper", "PrivateFieldCanBeConvertedToLocalVariable", Justification = "Need to keep this as a GC root")]
         private static readonly NativeLibraryHandle LibHandle;
 
+        public static readonly IntPtr MultiplyPtr;
         public static readonly MultiplyDelegate Multiply;
 
         static NativeLibMethods()
         {
             LibHandle = NativeMethods.LoadLibrary(LibraryName);
-            Multiply = Marshal.GetDelegateForFunctionPointer<MultiplyDelegate>(NativeMethods.GetProcAddress(LibHandle, "Multiply"));
+
+            MultiplyPtr = NativeMethods.GetProcAddress(LibHandle, "Multiply");
+            Multiply = Marshal.GetDelegateForFunctionPointer<MultiplyDelegate>(MultiplyPtr);
         }
 
         [SuppressUnmanagedCodeSecurity]
