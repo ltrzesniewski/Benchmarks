@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -63,15 +64,73 @@ namespace Benchmarks.Common
             if (solutionDir == null)
                 return;
 
-            using (var file = new StreamWriter(Path.Combine(solutionDir, "README.md"), true, Encoding.UTF8))
-            {
-                var logger = new StreamLogger(file);
+            var title = GetTitle(summary);
+            if (title == null)
+                return;
 
-                logger.WriteLineHeader("## Summary");
+            var titleLine = $"## Summary: {title}";
+
+            var filePath = Path.Combine(solutionDir, "README.md");
+
+            var prefixLines = new List<string>();
+            var suffixLines = new List<string>();
+
+            if (File.Exists(filePath))
+            {
+                var allLines = File.ReadAllLines(filePath);
+
+                var foundSummary = false;
+                var inOldSummary = false;
+
+                foreach (var line in allLines)
+                {
+                    if (!foundSummary)
+                    {
+                        if (line.StartsWith(titleLine))
+                        {
+                            foundSummary = true;
+                            inOldSummary = true;
+                            continue;
+                        }
+
+                        prefixLines.Add(line);
+                        continue;
+                    }
+
+                    if (inOldSummary)
+                    {
+                        if (!line.StartsWith("#"))
+                            continue;
+
+                        inOldSummary = false;
+                    }
+
+                    suffixLines.Add(line);
+                }
+            }
+
+            using (var fileWriter = new StreamWriter(filePath, false, Encoding.UTF8))
+            {
+                var logger = new StreamLogger(fileWriter);
+
+                foreach (var line in prefixLines)
+                    logger.WriteLine(line);
+
+                logger.WriteLineHeader(titleLine);
                 logger.WriteLine();
 
                 MarkdownExporter.GitHub.ExportToLog(summary, logger);
+                logger.WriteLine();
+
+                foreach (var line in suffixLines)
+                    logger.WriteLine(line);
             }
+        }
+
+        private static string GetTitle(Summary summary)
+        {
+            var targetTypes = summary.Benchmarks.Select(i => i.Target.Type).Distinct().ToList();
+            return targetTypes.Count == 1 ? targetTypes[0].Name : null;
         }
 
         private static string GetSolutionDirectory()
