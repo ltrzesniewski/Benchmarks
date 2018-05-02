@@ -6,6 +6,7 @@ using InlineIL;
 
 namespace NativeInterop
 {
+    [DisassemblyDiagnoser]
     [SuppressUnmanagedCodeSecurity]
     public unsafe class NativeInteropStringNetCoreBench
     {

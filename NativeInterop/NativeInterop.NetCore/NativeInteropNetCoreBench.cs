@@ -6,6 +6,7 @@ using InlineIL;
 
 namespace NativeInterop
 {
+    [DisassemblyDiagnoser]
     public unsafe class NativeInteropNetCoreBench
     {
         private const int ValueA = 14;
