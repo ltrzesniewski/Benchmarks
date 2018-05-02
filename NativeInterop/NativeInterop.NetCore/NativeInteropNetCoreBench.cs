@@ -22,14 +22,14 @@ namespace NativeInterop
         private static int ManagedImpl(int a, int b) => a * b;
 
         [Benchmark]
-        public int PInvokeWithoutSecurity() => MultiplyPInvokePInvokeWithoutSecurity(ValueA, ValueB);
+        public int PInvokeWithoutSecurity() => MultiplyPInvokeWithoutSecurity(ValueA, ValueB);
 
         [Benchmark]
         public int PInvokeWithSecurity() => MultiplyPInvokeWithSecurity(ValueA, ValueB);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport(NativeLibMethods.LibraryName, EntryPoint = "Multiply")]
-        private static extern int MultiplyPInvokePInvokeWithoutSecurity(int a, int b);
+        private static extern int MultiplyPInvokeWithoutSecurity(int a, int b);
 
         [DllImport(NativeLibMethods.LibraryName, EntryPoint = "Multiply")]
         private static extern int MultiplyPInvokeWithSecurity(int a, int b);

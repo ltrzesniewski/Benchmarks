@@ -14,15 +14,15 @@ Frequency=3515629 Hz, Resolution=284.4441 ns, Timer=TSC
 
 
 ```
-|                        Method |       Mean |     Error |    StdDev | Scaled | ScaledSD |
-|------------------------------ |-----------:|----------:|----------:|-------:|---------:|
-|                       Managed |  0.8697 ns | 0.0026 ns | 0.0025 ns |   1.00 |     0.00 |
-| PInvokePInvokeWithoutSecurity |  7.0018 ns | 0.0089 ns | 0.0083 ns |   8.05 |     0.02 |
-|           PInvokeWithSecurity | 11.3666 ns | 0.0562 ns | 0.0498 ns |  13.07 |     0.07 |
-|                      Delegate | 10.5551 ns | 0.0169 ns | 0.0158 ns |  12.14 |     0.04 |
-|                         Calli |  6.7567 ns | 0.0134 ns | 0.0119 ns |   7.77 |     0.03 |
-|                        CppCli | 10.6683 ns | 0.0393 ns | 0.0348 ns |  12.27 |     0.05 |
-|                  CppCliDirect |  7.0388 ns | 0.0105 ns | 0.0093 ns |   8.09 |     0.02 |
+|                 Method |       Mean |     Error |    StdDev | Scaled | ScaledSD |
+|----------------------- |-----------:|----------:|----------:|-------:|---------:|
+|                Managed |  0.8752 ns | 0.0034 ns | 0.0029 ns |   1.00 |     0.00 |
+| PInvokeWithoutSecurity |  7.0514 ns | 0.0127 ns | 0.0119 ns |   8.06 |     0.03 |
+|    PInvokeWithSecurity | 10.9895 ns | 0.0077 ns | 0.0072 ns |  12.56 |     0.04 |
+|               Delegate | 10.5765 ns | 0.0075 ns | 0.0063 ns |  12.08 |     0.04 |
+|                  Calli |  6.7668 ns | 0.0112 ns | 0.0099 ns |   7.73 |     0.03 |
+|                 CppCli | 10.6485 ns | 0.0358 ns | 0.0279 ns |  12.17 |     0.05 |
+|           CppCliDirect |  7.0494 ns | 0.0083 ns | 0.0069 ns |   8.05 |     0.03 |
 
 ## NativeInteropNetCoreBench
 
