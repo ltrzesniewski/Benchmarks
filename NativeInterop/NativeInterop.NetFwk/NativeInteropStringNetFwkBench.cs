@@ -101,6 +101,27 @@ namespace NativeInterop
         }
 
         [Benchmark]
+        [SuppressUnmanagedCodeSecurity]
+        public char CalliByRef()
+        {
+            // I'm not sure if this one is safe
+
+            IL.DeclareLocals(
+                false,
+                typeof(char).MakeByRefType()
+            );
+
+            IL.Push(Value);
+            IL.Emit.Stloc_0();
+            IL.Emit.Ldloc_0();
+            IL.Push(RuntimeHelpers.OffsetToStringData);
+            IL.Emit.Add();
+            IL.Push(GetFirstCharPtr);
+            IL.Emit.Calli(new StandAloneMethodSig(CallingConvention.StdCall, typeof(char), typeof(char).MakeByRefType()));
+            return IL.Return<char>();
+        }
+
+        [Benchmark]
         public char CppCli() => NativeInterop.CppCli.GetFirstChar(Value);
 
         [Benchmark]

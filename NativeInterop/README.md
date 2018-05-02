@@ -49,8 +49,9 @@ Frequency=3515629 Hz, Resolution=284.4441 ns, Timer=TSC
 
 ``` ini
 
-BenchmarkDotNet=v0.10.14, OS=Windows 10.0.16299.371 (1709/FallCreatorsUpdate/Redstone3)
-Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
+BenchmarkDotNet=v0.10.14, OS=Windows 10.0.16299.309 (1709/FallCreatorsUpdate/Redstone3)
+Intel Core i7-7700 CPU 3.60GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
+Frequency=3515629 Hz, Resolution=284.4441 ns, Timer=TSC
   [Host]     : .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.2633.0
   DefaultJob : .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.2633.0
 
@@ -58,13 +59,14 @@ Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cor
 ```
 |                  Method |              Mean |           Error |          StdDev |        Scaled |   ScaledSD |
 |------------------------ |------------------:|----------------:|----------------:|--------------:|-----------:|
-|                 Managed |          1.109 ns |       0.0118 ns |       0.0111 ns |          1.00 |       0.00 |
-|                 PInvoke |          6.486 ns |       0.0035 ns |       0.0033 ns |          5.85 |       0.06 |
-|                Delegate |          8.749 ns |       0.0511 ns |       0.0478 ns |          7.89 |       0.09 |
-|              CalliFixed |         32.501 ns |       0.0556 ns |       0.0465 ns |         29.31 |       0.28 |
-|          CalliCustomPin |         33.071 ns |       0.1334 ns |       0.1183 ns |         29.82 |       0.30 |
-| CalliCustomPinWithLocal |         32.732 ns |       0.2967 ns |       0.2776 ns |         29.52 |       0.37 |
-|             CalliString | 46,639,052.011 ns | 179,411.8348 ns | 167,821.9252 ns | 42,057,972.66 | 426,712.48 |
-|                  CppCli |          8.796 ns |       0.0057 ns |       0.0051 ns |          7.93 |       0.08 |
-|            CppCliDirect |          6.537 ns |       0.0458 ns |       0.0429 ns |          5.90 |       0.07 |
+|                 Managed |          1.398 ns |       0.0037 ns |       0.0032 ns |          1.00 |       0.00 |
+|                 PInvoke |          8.570 ns |       0.0086 ns |       0.0071 ns |          6.13 |       0.01 |
+|                Delegate |         10.961 ns |       0.0129 ns |       0.0121 ns |          7.84 |       0.02 |
+|              CalliFixed |         42.896 ns |       0.0876 ns |       0.0819 ns |         30.68 |       0.09 |
+|          CalliCustomPin |         40.889 ns |       0.1274 ns |       0.1130 ns |         29.24 |       0.10 |
+| CalliCustomPinWithLocal |         40.544 ns |       0.0458 ns |       0.0331 ns |         29.00 |       0.07 |
+|             CalliString | 65,440,796.654 ns | 591,815.9569 ns | 553,584.9594 ns | 46,804,874.72 | 396,455.31 |
+|              CalliByRef |         98.383 ns |       0.2838 ns |       0.2370 ns |         70.37 |       0.23 |
+|                  CppCli |         10.619 ns |       0.0054 ns |       0.0045 ns |          7.60 |       0.02 |
+|            CppCliDirect |          8.147 ns |       0.0183 ns |       0.0171 ns |          5.83 |       0.02 |
 
