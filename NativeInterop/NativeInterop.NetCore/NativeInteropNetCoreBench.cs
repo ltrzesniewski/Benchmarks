@@ -6,7 +6,6 @@ using InlineIL;
 
 namespace NativeInterop
 {
-    [SuppressUnmanagedCodeSecurity]
     public unsafe class NativeInteropNetCoreBench
     {
         private const int ValueA = 14;
@@ -23,11 +22,17 @@ namespace NativeInterop
         private static int ManagedImpl(int a, int b) => a * b;
 
         [Benchmark]
-        public int PInvoke() => MultiplyPInvoke(ValueA, ValueB);
+        public int PInvokeWithoutSecurity() => MultiplyPInvokePInvokeWithoutSecurity(ValueA, ValueB);
+
+        [Benchmark]
+        public int PInvokeWithSecurity() => MultiplyPInvokeWithSecurity(ValueA, ValueB);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport(NativeLibMethods.LibraryName, EntryPoint = "Multiply")]
-        private static extern int MultiplyPInvoke(int a, int b);
+        private static extern int MultiplyPInvokePInvokeWithoutSecurity(int a, int b);
+
+        [DllImport(NativeLibMethods.LibraryName, EntryPoint = "Multiply")]
+        private static extern int MultiplyPInvokeWithSecurity(int a, int b);
 
         [Benchmark]
         public int Delegate() => MultiplyDelegate(ValueA, ValueB);
