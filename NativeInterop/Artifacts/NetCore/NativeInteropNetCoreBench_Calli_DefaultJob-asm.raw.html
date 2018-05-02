@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' />
+<title>Output of DisassemblyDiagnoser for NativeInteropNetCoreBench.Calli: DefaultJob</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+</head>
+<body>
+<table>
+<tbody>
+<tr><th colspan="2" id="140729090710160" style="text-align: left;">00007ffe`0b761a90 NativeInterop.NativeInteropNetCoreBench.Calli()</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761ac5 48b9b0147d0bfe7f0000 mov rcx,7FFE0B7D14B0h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761acf ba01000000      mov     edx,1</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761ad4 e89739ad5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)</pre></code></td>
+<td>not managed method</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761ad9 49bbe8147d0bfe7f0000 mov r11,7FFE0B7D14E8h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761ae3 498b03          mov     rax,qword ptr [r11]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761ae6 4533db          xor     r11d,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761ae9 b90e000000      mov     ecx,0Eh</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761aee ba03000000      mov     edx,3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761af3 4c8d0512000000  lea     r8,[00007ffe`0b761b0c]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761afa 4c8945b8        mov     qword ptr [rbp-48h],r8</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761afe 4c8d4590        lea     r8,[rbp-70h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761b02 4c894610        mov     qword ptr [rsi+10h],r8</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761b06 c6460c00        mov     byte ptr [rsi+0Ch],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761b0a ffd0            call    rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761b0c c6460c01        mov     byte ptr [rsi+0Ch],1</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761b10 48baf043606bfe7f0000 mov rdx,offset coreclr!g_CLREngineMetrics+0xca80 (00007ffe`6b6043f0)</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761b1a 833a00          cmp     dword ptr [rdx],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761b1d 740c            je      00007ffe`0b761b2b</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761b1f 48b9c8415f6bfe7f0000 mov rcx,offset coreclr!GetCLRRuntimeHost+0x2fcae8 (00007ffe`6b5f41c8)</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761b29 ff11            call    qword ptr [rcx]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761b2b 488b5598        mov     rdx,qword ptr [rbp-68h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`0b761b2f 48895610        mov     qword ptr [rsi+10h],rdx</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table></body></html>

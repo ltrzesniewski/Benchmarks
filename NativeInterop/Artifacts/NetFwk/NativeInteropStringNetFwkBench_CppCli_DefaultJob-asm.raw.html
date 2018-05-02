@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' />
+<title>Output of DisassemblyDiagnoser for NativeInteropStringNetFwkBench.CppCli: DefaultJob</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+</head>
+<body>
+<table>
+<tbody>
+<tr><th colspan="2" id="140730115393616" style="text-align: left;">00007ffe`48898850 NativeInterop.NativeInteropStringNetFwkBench.CppCli()</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ffe`4889885b 488b0c25a0935b14 mov     rcx,qword ptr [145B93A0h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`48898863 4885c9          test    rcx,rcx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`48898866 7404            je      00007ffe`4889886c</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`48898868 4883c10c        add     rcx,0Ch</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`4889886c 48894c2420      mov     qword ptr [rsp+20h],rcx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`48898871 e84af0ffff      call    00007ffe`488978c0</pre></code></td>
+<td><Module>.GetFirstChar(Char*)</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`48898876 0fb7c0          movzx   eax,ax</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
+<tr><td colspan="2"><Module>.GetFirstChar(Char*)</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table></body></html>

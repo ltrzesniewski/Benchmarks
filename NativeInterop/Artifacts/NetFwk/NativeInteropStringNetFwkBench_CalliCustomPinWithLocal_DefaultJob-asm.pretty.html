@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for NativeInteropStringNetFwkBench.CalliCustomPinWithLocal: DefaultJob</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+</head><body><table><tbody>
+<tr><th colspan="2" style="text-align: left;">NativeInterop.NativeInteropStringNetFwkBench.CalliCustomPinWithLocal()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ffe`488c6de0 488b0c25a0938413 mov     rcx,qword ptr [138493A0h]"><pre><code>mov     rcx,qword ptr [138493A0h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488c6de8 48894df8        mov     qword ptr [rbp-8],rcx"><pre><code>mov     qword ptr [rbp-8],rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488c6dec 488b4df8        mov     rcx,qword ptr [rbp-8]"><pre><code>mov     rcx,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488c6df0 4883c10c        add     rcx,0Ch"><pre><code>add     rcx,0Ch</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488c6df4 49ba201040aafe7f0000 mov r10,offset NativeInterop_NativeLib!GetFirstChar (00007ffe`aa401020)"><pre><code>mov     r10,offset NativeInterop_NativeLib!GetFirstChar</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488c6dfe 41bbd0599a00    mov     r11d,9A59D0h"><pre><code>mov     r11d,9A59D0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488c6e04 e8b7a95d5f      call    clr+0x17c0 (00007ffe`a7ea17c0)"><pre><code>call    clr+0x17c0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488c6e09 0fb7c0          movzx   eax,ax"><pre><code>movzx   eax,ax</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ffe`a12a49d5 b80c000000      mov     eax,0Ch"><pre><code>mov     eax,0Ch</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table></body></html>

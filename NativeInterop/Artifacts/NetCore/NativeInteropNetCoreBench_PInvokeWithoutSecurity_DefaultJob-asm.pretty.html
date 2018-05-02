@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for NativeInteropNetCoreBench.PInvokeWithoutSecurity: DefaultJob</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+</head><body><table><tbody>
+<tr><th colspan="2" style="text-align: left;">NativeInterop.NativeInteropNetCoreBench.PInvokeWithoutSecurity()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ffe`0b751ac5 4533db          xor     r11d,r11d"><pre><code>xor     r11d,r11d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751ac8 b90e000000      mov     ecx,0Eh"><pre><code>mov     ecx,0Eh</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751acd ba03000000      mov     edx,3"><pre><code>mov     edx,3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751ad2 48b878157c0bfe7f0000 mov rax,7FFE0B7C1578h"><pre><code>mov     rax,7FFE0B7C1578h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751adc 488945a0        mov     qword ptr [rbp-60h],rax"><pre><code>mov     qword ptr [rbp-60h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751ae0 488d051c000000  lea     rax,[00007ffe`0b751b03]"><pre><code>lea     rax,[00007ffe`0b751b03]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751ae7 488945b8        mov     qword ptr [rbp-48h],rax"><pre><code>mov     qword ptr [rbp-48h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751aeb 488d4590        lea     rax,[rbp-70h]"><pre><code>lea     rax,[rbp-70h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751aef 48894610        mov     qword ptr [rsi+10h],rax"><pre><code>mov     qword ptr [rsi+10h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751af3 c6460c00        mov     byte ptr [rsi+0Ch],0"><pre><code>mov     byte ptr [rsi+0Ch],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751af7 48b838167c0bfe7f0000 mov rax,7FFE0B7C1638h"><pre><code>mov     rax,7FFE0B7C1638h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751b01 ff10            call    qword ptr [rax]"><pre><code>call    qword ptr [rax]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751b03 c6460c01        mov     byte ptr [rsi+0Ch],1"><pre><code>mov     byte ptr [rsi+0Ch],1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751b07 48baf043606bfe7f0000 mov rdx,offset coreclr!g_CLREngineMetrics+0xca80 (00007ffe`6b6043f0)"><pre><code>mov     rdx,offset coreclr!g_CLREngineMetrics+0xca80</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751b11 833a00          cmp     dword ptr [rdx],0"><pre><code>cmp     dword ptr [rdx],0</pre></code></td>
+</tr><tr class="">
+<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ffe`0b751b14 740c            je      00007ffe`0b751b22"><a href="#M00_L00"><pre><code>je      M00_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751b16 48b9c8415f6bfe7f0000 mov rcx,offset coreclr!GetCLRRuntimeHost+0x2fcae8 (00007ffe`6b5f41c8)"><pre><code>mov     rcx,offset coreclr!GetCLRRuntimeHost+0x2fcae8</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b751b20 ff11            call    qword ptr [rcx]"><pre><code>call    qword ptr [rcx]</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M00_L00" class="label" data-label="M00_L00"><pre><code>M00_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ffe`0b751b22 488b5598        mov     rdx,qword ptr [rbp-68h]"><pre><code>mov     rdx,qword ptr [rbp-68h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`0b751b26 48895610        mov     qword ptr [rsi+10h],rdx"><pre><code>mov     qword ptr [rsi+10h],rdx</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
+<tr><td colspan="2">NativeInterop.NativeInteropNetCoreBench.MultiplyPInvokeWithoutSecurity(Int32, Int32)</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table></body></html>

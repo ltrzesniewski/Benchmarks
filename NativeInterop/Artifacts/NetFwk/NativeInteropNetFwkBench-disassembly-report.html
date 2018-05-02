@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output NativeInteropNetFwkBench</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="7">NativeInteropNetFwkBench</th></tr>
+<tr>
+<th>Managed .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>PInvokeWithoutSecurity .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>PInvokeWithSecurity .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>Delegate .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>Calli .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>CppCli .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>CppCliDirect .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488c6530 NativeInterop.NativeInteropNetFwkBench.ManagedImpl(Int32, Int32)
+00007ffe`488c6530 8bc1            mov     eax,ecx
+00007ffe`488c6532 0fafc2          imul    eax,edx
+
+00007ffe`488c6500 NativeInterop.NativeInteropNetFwkBench.Managed()
+00007ffe`488c6500 b90e000000      mov     ecx,0Eh
+00007ffe`488c6505 ba03000000      mov     edx,3
+00007ffe`488c650a 48b8b8288b48fe7f0000 mov rax,7FFE488B28B8h
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488a6500 NativeInterop.NativeInteropNetFwkBench.PInvokeWithoutSecurity()
+00007ffe`488a6535 4533db          xor     r11d,r11d
+00007ffe`488a6538 b90e000000      mov     ecx,0Eh
+00007ffe`488a653d ba03000000      mov     edx,3
+00007ffe`488a6542 48b8f8779448fe7f0000 mov rax,7FFE489477F8h
+00007ffe`488a654c 488945a0        mov     qword ptr [rbp-60h],rax
+00007ffe`488a6550 488d0516000000  lea     rax,[00007ffe`488a656d]
+00007ffe`488a6557 488945b8        mov     qword ptr [rbp-48h],rax
+00007ffe`488a655b 488d4590        lea     rax,[rbp-70h]
+00007ffe`488a655f 48894610        mov     qword ptr [rsi+10h],rax
+00007ffe`488a6563 c6460c00        mov     byte ptr [rsi+0Ch],0
+00007ffe`488a6567 ff156b130a00    call    qword ptr [00007ffe`489478d8]
+00007ffe`488a656d c6460c01        mov     byte ptr [rsi+0Ch],1
+00007ffe`488a6571 833db8dbf35f00  cmp     dword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fcdb0 (00007ffe`a87e4130)],0
+00007ffe`488a6578 7406            je      00007ffe`488a6580
+00007ffe`488a657a ff15c8e7f35f    call    qword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fd9c8 (00007ffe`a87e4d48)]
+00007ffe`488a6580 488b5598        mov     rdx,qword ptr [rbp-68h]
+00007ffe`488a6584 48895610        mov     qword ptr [rsi+10h],rdx
+
+Method got most probably inlined
+NativeInterop.NativeInteropNetFwkBench.MultiplyPInvokeWithoutSecurity(Int32, Int32)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488b6500 NativeInterop.NativeInteropNetFwkBench.PInvokeWithSecurity()
+00007ffe`488b6500 b90e000000      mov     ecx,0Eh
+00007ffe`488b6505 ba03000000      mov     edx,3
+00007ffe`488b650a 48b8a84b8b48fe7f0000 mov rax,7FFE488B4BA8h
+
+Method got most probably inlined
+NativeInterop.NativeInteropNetFwkBench.MultiplyPInvokeWithSecurity(Int32, Int32)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488c6d40 NativeInterop.NativeInteropNetFwkBench.Delegate()
+00007ffe`488c6d41 488b0c2598934114 mov     rcx,qword ptr [14419398h]
+00007ffe`488c6d49 48890c24        mov     qword ptr [rsp],rcx
+00007ffe`488c6d4d 488b0c24        mov     rcx,qword ptr [rsp]
+00007ffe`488c6d51 488d4908        lea     rcx,[rcx+8]
+00007ffe`488c6d55 488b09          mov     rcx,qword ptr [rcx]
+00007ffe`488c6d58 ba0e000000      mov     edx,0Eh
+00007ffe`488c6d5d 41b803000000    mov     r8d,3
+00007ffe`488c6d63 488b0424        mov     rax,qword ptr [rsp]
+00007ffe`488c6d67 488b4018        mov     rax,qword ptr [rax+18h]
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488b6d40 NativeInterop.NativeInteropNetFwkBench.Calli()
+00007ffe`488b6d40 55              push    rbp
+00007ffe`488b6d41 4157            push    r15
+00007ffe`488b6d43 4156            push    r14
+00007ffe`488b6d45 4155            push    r13
+00007ffe`488b6d47 4154            push    r12
+00007ffe`488b6d49 57              push    rdi
+00007ffe`488b6d4a 56              push    rsi
+00007ffe`488b6d4b 53              push    rbx
+00007ffe`488b6d4c 4883ec68        sub     rsp,68h
+00007ffe`488b6d50 488dac24a0000000 lea     rbp,[rsp+0A0h]
+00007ffe`488b6d58 488d4d90        lea     rcx,[rbp-70h]
+00007ffe`488b6d5c 498bd2          mov     rdx,r10
+00007ffe`488b6d5f e81cde5e5f      call    clr!LogHelp_LogAssert+0xc0 (00007ffe`a7ea4b80)
+00007ffe`488b6d64 488bf0          mov     rsi,rax
+00007ffe`488b6d67 4c8bdc          mov     r11,rsp
+00007ffe`488b6d6a 4c895db0        mov     qword ptr [rbp-50h],r11
+00007ffe`488b6d6e 4c8bdd          mov     r11,rbp
+00007ffe`488b6d71 4c895dc0        mov     qword ptr [rbp-40h],r11
+00007ffe`488b6d75 4533db          xor     r11d,r11d
+00007ffe`488b6d78 b90e000000      mov     ecx,0Eh
+00007ffe`488b6d7d ba03000000      mov     edx,3
+00007ffe`488b6d82 488d051c000000  lea     rax,[00007ffe`488b6da5]
+00007ffe`488b6d89 488945b8        mov     qword ptr [rbp-48h],rax
+00007ffe`488b6d8d 488d4590        lea     rax,[rbp-70h]
+00007ffe`488b6d91 48894610        mov     qword ptr [rsi+10h],rax
+00007ffe`488b6d95 c6460c00        mov     byte ptr [rsi+0Ch],0
+00007ffe`488b6d99 48b8101040aafe7f0000 mov rax,offset NativeInterop_NativeLib!Multiply (00007ffe`aa401010)
+00007ffe`488b6da3 ffd0            call    rax
+00007ffe`488b6da5 c6460c01        mov     byte ptr [rsi+0Ch],1
+00007ffe`488b6da9 833d80d3f25f00  cmp     dword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fcdb0 (00007ffe`a87e4130)],0
+00007ffe`488b6db0 7406            je      00007ffe`488b6db8
+00007ffe`488b6db2 ff1590dff25f    call    qword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fd9c8 (00007ffe`a87e4d48)]
+00007ffe`488b6db8 488b5598        mov     rdx,qword ptr [rbp-68h]
+00007ffe`488b6dbc 48895610        mov     qword ptr [rsi+10h],rdx
+00007ffe`488b6dc0 c6460c01        mov     byte ptr [rsi+0Ch],1
+00007ffe`488b6dc4 488d65c8        lea     rsp,[rbp-38h]
+00007ffe`488b6dc8 5b              pop     rbx
+00007ffe`488b6dc9 5e              pop     rsi
+00007ffe`488b6dca 5f              pop     rdi
+00007ffe`488b6dcb 415c            pop     r12
+00007ffe`488b6dcd 415d            pop     r13
+00007ffe`488b6dcf 415e            pop     r14
+00007ffe`488b6dd1 415f            pop     r15
+00007ffe`488b6dd3 5d              pop     rbp
+00007ffe`488b6dd4 c3              ret
+00007ffe`488b6dd5 0000            add     byte ptr [rax],al
+00007ffe`488b6dd7 0019            add     byte ptr [rcx],bl
+00007ffe`488b6dd9 1009            adc     byte ptr [rcx],cl
+00007ffe`488b6ddb 0010            add     byte ptr [rax],dl
+00007ffe`488b6ddd c20c30          ret     300Ch
+00007ffe`488b6de0 0b600a          or      esp,dword ptr [rax+0Ah]
+00007ffe`488b6de3 7009            jo      00007ffe`488b6dee
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`48897b80 NativeInterop.NativeInteropNetFwkBench.CppCli()
+00007ffe`48897b80 4883ec28        sub     rsp,28h
+00007ffe`48897b84 b90e000000      mov     ecx,0Eh
+00007ffe`48897b89 ba03000000      mov     edx,3
+00007ffe`48897b8e e875d1ffff      call    00007ffe`48894d08
+00007ffe`48897b93 90              nop
+00007ffe`48897b94 4883c428        add     rsp,28h
+00007ffe`48897b98 c3              ret
+00007ffe`48897b99 0000            add     byte ptr [rax],al
+00007ffe`48897b9b 0019            add     byte ptr [rcx],bl
+00007ffe`48897b9d 0401            add     al,1
+00007ffe`48897b9f 000442          add     byte ptr [rdx+rax*2],al
+00007ffe`48897ba2 0000            add     byte ptr [rax],al
+00007ffe`48897ba4 400000          add     byte ptr [rax],al
+00007ffe`48897ba7 00a0339848fe    add     byte ptr [rax-1B767CDh],ah
+00007ffe`48897bad 7f00            jg      00007ffe`48897baf
+00007ffe`48897baf 005541          add     byte ptr [rbp+41h],dl
+00007ffe`48897bb2 57              push    rdi
+
+Method got most probably inlined
+<Module>.Multiply(Int32, Int32)
+NativeInterop.CppCli.Multiply(Int32, Int32)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488d7b80 NativeInterop.NativeInteropNetFwkBench.CppCliDirect()
+00007ffe`488d7b80 55              push    rbp
+00007ffe`488d7b81 4157            push    r15
+00007ffe`488d7b83 4156            push    r14
+00007ffe`488d7b85 4155            push    r13
+00007ffe`488d7b87 4154            push    r12
+00007ffe`488d7b89 57              push    rdi
+00007ffe`488d7b8a 56              push    rsi
+00007ffe`488d7b8b 53              push    rbx
+00007ffe`488d7b8c 4883ec68        sub     rsp,68h
+00007ffe`488d7b90 488dac24a0000000 lea     rbp,[rsp+0A0h]
+00007ffe`488d7b98 488d4d90        lea     rcx,[rbp-70h]
+00007ffe`488d7b9c 498bd2          mov     rdx,r10
+00007ffe`488d7b9f e8dccf5c5f      call    clr!LogHelp_LogAssert+0xc0 (00007ffe`a7ea4b80)
+00007ffe`488d7ba4 488bf0          mov     rsi,rax
+00007ffe`488d7ba7 4c8bdc          mov     r11,rsp
+00007ffe`488d7baa 4c895db0        mov     qword ptr [rbp-50h],r11
+00007ffe`488d7bae 4c8bdd          mov     r11,rbp
+00007ffe`488d7bb1 4c895dc0        mov     qword ptr [rbp-40h],r11
+00007ffe`488d7bb5 4533db          xor     r11d,r11d
+00007ffe`488d7bb8 b90e000000      mov     ecx,0Eh
+00007ffe`488d7bbd ba03000000      mov     edx,3
+00007ffe`488d7bc2 48b878059d48fe7f0000 mov rax,7FFE489D0578h
+00007ffe`488d7bcc 488945a0        mov     qword ptr [rbp-60h],rax
+00007ffe`488d7bd0 488d0516000000  lea     rax,[00007ffe`488d7bed]
+00007ffe`488d7bd7 488945b8        mov     qword ptr [rbp-48h],rax
+00007ffe`488d7bdb 488d4590        lea     rax,[rbp-70h]
+00007ffe`488d7bdf 48894610        mov     qword ptr [rsi+10h],rax
+00007ffe`488d7be3 c6460c00        mov     byte ptr [rsi+0Ch],0
+00007ffe`488d7be7 ff15338c0f00    call    qword ptr [00007ffe`489d0820]
+00007ffe`488d7bed c6460c01        mov     byte ptr [rsi+0Ch],1
+00007ffe`488d7bf1 833d38c5f05f00  cmp     dword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fcdb0 (00007ffe`a87e4130)],0
+00007ffe`488d7bf8 7406            je      00007ffe`488d7c00
+00007ffe`488d7bfa ff1548d1f05f    call    qword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fd9c8 (00007ffe`a87e4d48)]
+00007ffe`488d7c00 488b5598        mov     rdx,qword ptr [rbp-68h]
+00007ffe`488d7c04 48895610        mov     qword ptr [rsi+10h],rdx
+00007ffe`488d7c08 c6460c01        mov     byte ptr [rsi+0Ch],1
+00007ffe`488d7c0c 488d65c8        lea     rsp,[rbp-38h]
+00007ffe`488d7c10 5b              pop     rbx
+00007ffe`488d7c11 5e              pop     rsi
+00007ffe`488d7c12 5f              pop     rdi
+00007ffe`488d7c13 415c            pop     r12
+00007ffe`488d7c15 415d            pop     r13
+00007ffe`488d7c17 415e            pop     r14
+00007ffe`488d7c19 415f            pop     r15
+00007ffe`488d7c1b 5d              pop     rbp
+00007ffe`488d7c1c c3              ret
+00007ffe`488d7c1d 0000            add     byte ptr [rax],al
+00007ffe`488d7c1f 0019            add     byte ptr [rcx],bl
+00007ffe`488d7c21 1009            adc     byte ptr [rcx],cl
+00007ffe`488d7c23 0010            add     byte ptr [rax],dl
+00007ffe`488d7c25 c20c30          ret     300Ch
+00007ffe`488d7c28 0b600a          or      esp,dword ptr [rax+0Ah]
+00007ffe`488d7c2b 7009            jo      00007ffe`488d7c36
+
+Method got most probably inlined
+NativeInterop.CppCli.MultiplyDirect(Int32, Int32)
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

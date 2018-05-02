@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output NativeInteropStringNetFwkBench</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="10">NativeInteropStringNetFwkBench</th></tr>
+<tr>
+<th>Managed .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>PInvoke .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>Delegate .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>CalliFixed .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>CalliCustomPin .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>CalliCustomPinWithLocal .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>CalliString .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>CalliByRef .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>CppCli .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+<th>CppCliDirect .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488b6dd0 NativeInterop.NativeInteropStringNetFwkBench.Managed()
+00007ffe`488b6dd0 488b0c25a0934914 mov     rcx,qword ptr [144993A0h]
+00007ffe`488b6dd8 48b8a8288a48fe7f0000 mov rax,7FFE488A28A8h
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488a6dd0 NativeInterop.NativeInteropStringNetFwkBench.PInvoke()
+00007ffe`488a6dd4 488b0c25a0933814 mov     rcx,qword ptr [143893A0h]
+00007ffe`488a6ddc 48b8e04c8a48fe7f0000 mov rax,7FFE488A4CE0h
+
+Method got most probably inlined
+NativeInterop.NativeInteropStringNetFwkBench.GetFirstCharPInvoke(System.String)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488a6dd0 NativeInterop.NativeInteropStringNetFwkBench.Delegate()
+00007ffe`488a6dd1 488b0c25a8932514 mov     rcx,qword ptr [142593A8h]
+00007ffe`488a6dd9 48890c24        mov     qword ptr [rsp],rcx
+00007ffe`488a6ddd 488b0c24        mov     rcx,qword ptr [rsp]
+00007ffe`488a6de1 488d4908        lea     rcx,[rcx+8]
+00007ffe`488a6de5 488b09          mov     rcx,qword ptr [rcx]
+00007ffe`488a6de8 488b1425a0932514 mov     rdx,qword ptr [142593A0h]
+00007ffe`488a6df0 488b0424        mov     rax,qword ptr [rsp]
+00007ffe`488a6df4 488b4018        mov     rax,qword ptr [rax+18h]
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488d6dd0 NativeInterop.NativeInteropStringNetFwkBench.CalliFixed()
+00007ffe`488d6de0 488b0c25a093ea13 mov     rcx,qword ptr [13EA93A0h]
+00007ffe`488d6de8 48894df8        mov     qword ptr [rbp-8],rcx
+00007ffe`488d6dec 488b4df8        mov     rcx,qword ptr [rbp-8]
+00007ffe`488d6df0 4885c9          test    rcx,rcx
+00007ffe`488d6df3 7404            je      00007ffe`488d6df9
+00007ffe`488d6df5 4883c10c        add     rcx,0Ch
+00007ffe`488d6df9 49ba201040aafe7f0000 mov r10,offset NativeInterop_NativeLib!GetFirstChar (00007ffe`aa401020)
+00007ffe`488d6e03 41bb904c0a01    mov     r11d,10A4C90h
+00007ffe`488d6e09 e8b2a95c5f      call    clr+0x17c0 (00007ffe`a7ea17c0)
+00007ffe`488d6e0e 0fb7c0          movzx   eax,ax
+
+00007ffe`a12a49d0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
+00007ffe`a12a49d5 b80c000000      mov     eax,0Ch
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488c6dd0 NativeInterop.NativeInteropStringNetFwkBench.CalliCustomPin()
+00007ffe`488c6de0 488b0c25a0931a14 mov     rcx,qword ptr [141A93A0h]
+00007ffe`488c6de8 48894df8        mov     qword ptr [rbp-8],rcx
+00007ffe`488c6dec 488b4df8        mov     rcx,qword ptr [rbp-8]
+00007ffe`488c6df0 4883c10c        add     rcx,0Ch
+00007ffe`488c6df4 49ba201040aafe7f0000 mov r10,offset NativeInterop_NativeLib!GetFirstChar (00007ffe`aa401020)
+00007ffe`488c6dfe 41bbc09a2c01    mov     r11d,12C9AC0h
+00007ffe`488c6e04 e8b7a95d5f      call    clr+0x17c0 (00007ffe`a7ea17c0)
+00007ffe`488c6e09 0fb7c0          movzx   eax,ax
+
+00007ffe`a12a49d0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
+00007ffe`a12a49d5 b80c000000      mov     eax,0Ch
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488c6dd0 NativeInterop.NativeInteropStringNetFwkBench.CalliCustomPinWithLocal()
+00007ffe`488c6de0 488b0c25a0938413 mov     rcx,qword ptr [138493A0h]
+00007ffe`488c6de8 48894df8        mov     qword ptr [rbp-8],rcx
+00007ffe`488c6dec 488b4df8        mov     rcx,qword ptr [rbp-8]
+00007ffe`488c6df0 4883c10c        add     rcx,0Ch
+00007ffe`488c6df4 49ba201040aafe7f0000 mov r10,offset NativeInterop_NativeLib!GetFirstChar (00007ffe`aa401020)
+00007ffe`488c6dfe 41bbd0599a00    mov     r11d,9A59D0h
+00007ffe`488c6e04 e8b7a95d5f      call    clr+0x17c0 (00007ffe`a7ea17c0)
+00007ffe`488c6e09 0fb7c0          movzx   eax,ax
+
+00007ffe`a12a49d0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
+00007ffe`a12a49d5 b80c000000      mov     eax,0Ch
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`48896dd0 NativeInterop.NativeInteropStringNetFwkBench.CalliString()
+00007ffe`48896dd0 55              push    rbp
+00007ffe`48896dd1 4883ec20        sub     rsp,20h
+00007ffe`48896dd5 488d6c2420      lea     rbp,[rsp+20h]
+00007ffe`48896dda 488b0c25a0933214 mov     rcx,qword ptr [143293A0h]
+00007ffe`48896de2 49ba201040aafe7f0000 mov r10,offset NativeInterop_NativeLib!GetFirstChar (00007ffe`aa401020)
+00007ffe`48896dec 41bb80833301    mov     r11d,1338380h
+00007ffe`48896df2 e8c9a9605f      call    clr+0x17c0 (00007ffe`a7ea17c0)
+00007ffe`48896df7 0fb7c0          movzx   eax,ax
+00007ffe`48896dfa 488d6500        lea     rsp,[rbp]
+00007ffe`48896dfe 5d              pop     rbp
+00007ffe`48896dff c3              ret
+00007ffe`48896e00 190502000532    sbb     dword ptr [00007ffe`7a8e6e08],eax
+00007ffe`48896e06 015040          add     dword ptr [rax+40h],edx
+00007ffe`48896e09 0000            add     byte ptr [rax],al
+00007ffe`48896e0b 0000            add     byte ptr [rax],al
+00007ffe`48896e0d 0000            add     byte ptr [rax],al
+00007ffe`48896e0f 0000            add     byte ptr [rax],al
+00007ffe`48896e11 0000            add     byte ptr [rax],al
+00007ffe`48896e13 0000            add     byte ptr [rax],al
+00007ffe`48896e15 0000            add     byte ptr [rax],al
+00007ffe`48896e17 0000            add     byte ptr [rax],al
+00007ffe`48896e19 da9648fe7f00    ficom   dword ptr [rsi+7FFE48h]
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`488c6dd0 NativeInterop.NativeInteropStringNetFwkBench.CalliByRef()
+00007ffe`488c6dda 488b0c25a0933914 mov     rcx,qword ptr [143993A0h]
+00007ffe`488c6de2 4883c10c        add     rcx,0Ch
+00007ffe`488c6de6 49ba201040aafe7f0000 mov r10,offset NativeInterop_NativeLib!GetFirstChar (00007ffe`aa401020)
+00007ffe`488c6df0 41bbf05de41c    mov     r11d,1CE45DF0h
+00007ffe`488c6df6 e8c5a95d5f      call    clr+0x17c0 (00007ffe`a7ea17c0)
+00007ffe`488c6dfb 0fb7c0          movzx   eax,ax
+
+00007ffe`a12a49d0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
+00007ffe`a12a49d5 b80c000000      mov     eax,0Ch
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`48898850 NativeInterop.NativeInteropStringNetFwkBench.CppCli()
+00007ffe`4889885b 488b0c25a0935b14 mov     rcx,qword ptr [145B93A0h]
+00007ffe`48898863 4885c9          test    rcx,rcx
+00007ffe`48898866 7404            je      00007ffe`4889886c
+00007ffe`48898868 4883c10c        add     rcx,0Ch
+00007ffe`4889886c 48894c2420      mov     qword ptr [rsp+20h],rcx
+00007ffe`48898871 e84af0ffff      call    00007ffe`488978c0
+00007ffe`48898876 0fb7c0          movzx   eax,ax
+
+Method got most probably inlined
+<Module>.GetFirstChar(Char*)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`48898850 NativeInterop.NativeInteropStringNetFwkBench.CppCliDirect()
+00007ffe`4889885b 488b0c25a0939413 mov     rcx,qword ptr [139493A0h]
+00007ffe`48898863 4885c9          test    rcx,rcx
+00007ffe`48898866 7404            je      00007ffe`4889886c
+00007ffe`48898868 4883c10c        add     rcx,0Ch
+00007ffe`4889886c 48894c2420      mov     qword ptr [rsp+20h],rcx
+00007ffe`48898871 e84af0ffff      call    00007ffe`488978c0
+00007ffe`48898876 0fb7c0          movzx   eax,ax
+
+Method got most probably inlined
+<Module>.?A0x73cf0f12.GetFirstCharDirect(Char*)
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

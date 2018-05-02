@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for NativeInteropStringNetCoreBench.CalliCustomPinWithLocal: DefaultJob</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+</head><body><table><tbody>
+<tr><th colspan="2" style="text-align: left;">NativeInterop.NativeInteropStringNetCoreBench.CalliCustomPinWithLocal()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ffe`0b771ae0 48b9b0147e0bfe7f0000 mov rcx,7FFE0B7E14B0h"><pre><code>mov     rcx,7FFE0B7E14B0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b771aea ba02000000      mov     edx,2"><pre><code>mov     edx,2</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b771aef e87c39ac5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)"><pre><code>call    coreclr!MetaDataGetDispenser+0x76730</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b771af4 49baa86d009017020000 mov r10,21790006DA8h"><pre><code>mov     r10,21790006DA8h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b771afe 4d8b12          mov     r10,qword ptr [r10]"><pre><code>mov     r10,qword ptr [r10]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b771b01 4c8955f8        mov     qword ptr [rbp-8],r10"><pre><code>mov     qword ptr [rbp-8],r10</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b771b05 4c8b55f8        mov     r10,qword ptr [rbp-8]"><pre><code>mov     r10,qword ptr [rbp-8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b771b09 498d4a0c        lea     rcx,[r10+0Ch]"><pre><code>lea     rcx,[r10+0Ch]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b771b0d 49baf0147e0bfe7f0000 mov r10,7FFE0B7E14F0h"><pre><code>mov     r10,7FFE0B7E14F0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b771b17 4d8b12          mov     r10,qword ptr [r10]"><pre><code>mov     r10,qword ptr [r10]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b771b1a 49bb402d80e917020000 mov r11,217E9802D40h"><pre><code>mov     r11,217E9802D40h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b771b24 e8e722ac5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`6b233e10)"><pre><code>call    coreclr!MetaDataGetDispenser+0x750d0</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><th colspan="2" style="text-align: left;">System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ffe`6ab212f5 b80c000000      mov     eax,0Ch"><pre><code>mov     eax,0Ch</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table></body></html>

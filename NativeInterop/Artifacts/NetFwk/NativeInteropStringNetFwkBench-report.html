@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>NativeInteropStringNetFwkBench</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.14, OS=Windows 10.0.17134
+Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
+  [Host]     : .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0
+  DefaultJob : .NET Framework 4.7.1 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3056.0
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>           Method</th><th>        Mean</th><th>    Error</th><th>   StdDev</th><th> Scaled</th><th>ScaledSD</th>
+</tr>
+</thead><tbody><tr><td>Managed</td><td>0.9254 ns</td><td>0.0084 ns</td><td>0.0070 ns</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>PInvoke</td><td>6.5183 ns</td><td>0.0362 ns</td><td>0.0321 ns</td><td>7.04</td><td>0.06</td>
+</tr><tr><td>Delegate</td><td>8.6131 ns</td><td>0.1921 ns</td><td>0.1703 ns</td><td>9.31</td><td>0.19</td>
+</tr><tr><td>CalliFixed</td><td>34.0910 ns</td><td>0.3785 ns</td><td>0.3355 ns</td><td>36.84</td><td>0.44</td>
+</tr><tr><td>CalliCustomPin</td><td>39.7228 ns</td><td>0.7810 ns</td><td>0.9297 ns</td><td>42.93</td><td>1.03</td>
+</tr><tr><td>CalliCustomPinWithLocal</td><td>36.0272 ns</td><td>0.7230 ns</td><td>0.8326 ns</td><td>38.93</td><td>0.92</td>
+</tr><tr><td>CalliString</td><td>48,566,205.8004 ns</td><td>823,417.1061 ns</td><td>729,937.7455 ns</td><td>52,484,101.89</td><td>849,725.92</td>
+</tr><tr><td>CalliByRef</td><td>86.4328 ns</td><td>1.7202 ns</td><td>2.2964 ns</td><td>93.41</td><td>2.52</td>
+</tr><tr><td>CppCli</td><td>8.5173 ns</td><td>0.2022 ns</td><td>0.2834 ns</td><td>9.20</td><td>0.31</td>
+</tr><tr><td>CppCliDirect</td><td>6.5150 ns</td><td>0.0281 ns</td><td>0.0219 ns</td><td>7.04</td><td>0.06</td>
+</tr></tbody></table>
+</body>
+</html>

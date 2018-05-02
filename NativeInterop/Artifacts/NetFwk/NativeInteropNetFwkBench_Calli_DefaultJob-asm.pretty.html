@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for NativeInteropNetFwkBench.Calli: DefaultJob</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+</head><body><table><tbody>
+<tr><th colspan="2" style="text-align: left;">NativeInterop.NativeInteropNetFwkBench.Calli()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ffe`488b6d40 55              push    rbp"><pre><code>push    rbp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d41 4157            push    r15"><pre><code>push    r15</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d43 4156            push    r14"><pre><code>push    r14</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d45 4155            push    r13"><pre><code>push    r13</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d47 4154            push    r12"><pre><code>push    r12</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d49 57              push    rdi"><pre><code>push    rdi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d4a 56              push    rsi"><pre><code>push    rsi</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d4b 53              push    rbx"><pre><code>push    rbx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d4c 4883ec68        sub     rsp,68h"><pre><code>sub     rsp,68h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d50 488dac24a0000000 lea     rbp,[rsp+0A0h]"><pre><code>lea     rbp,[rsp+0A0h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d58 488d4d90        lea     rcx,[rbp-70h]"><pre><code>lea     rcx,[rbp-70h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d5c 498bd2          mov     rdx,r10"><pre><code>mov     rdx,r10</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d5f e81cde5e5f      call    clr!LogHelp_LogAssert+0xc0 (00007ffe`a7ea4b80)"><pre><code>call    clr!LogHelp_LogAssert+0xc0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d64 488bf0          mov     rsi,rax"><pre><code>mov     rsi,rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d67 4c8bdc          mov     r11,rsp"><pre><code>mov     r11,rsp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d6a 4c895db0        mov     qword ptr [rbp-50h],r11"><pre><code>mov     qword ptr [rbp-50h],r11</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d6e 4c8bdd          mov     r11,rbp"><pre><code>mov     r11,rbp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d71 4c895dc0        mov     qword ptr [rbp-40h],r11"><pre><code>mov     qword ptr [rbp-40h],r11</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d75 4533db          xor     r11d,r11d"><pre><code>xor     r11d,r11d</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d78 b90e000000      mov     ecx,0Eh"><pre><code>mov     ecx,0Eh</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d7d ba03000000      mov     edx,3"><pre><code>mov     edx,3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d82 488d051c000000  lea     rax,[00007ffe`488b6da5]"><pre><code>lea     rax,[00007ffe`488b6da5]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d89 488945b8        mov     qword ptr [rbp-48h],rax"><pre><code>mov     qword ptr [rbp-48h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d8d 488d4590        lea     rax,[rbp-70h]"><pre><code>lea     rax,[rbp-70h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d91 48894610        mov     qword ptr [rsi+10h],rax"><pre><code>mov     qword ptr [rsi+10h],rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d95 c6460c00        mov     byte ptr [rsi+0Ch],0"><pre><code>mov     byte ptr [rsi+0Ch],0</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6d99 48b8101040aafe7f0000 mov rax,offset NativeInterop_NativeLib!Multiply (00007ffe`aa401010)"><pre><code>mov     rax,offset NativeInterop_NativeLib!Multiply</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6da3 ffd0            call    rax"><pre><code>call    rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6da5 c6460c01        mov     byte ptr [rsi+0Ch],1"><pre><code>mov     byte ptr [rsi+0Ch],1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6da9 833d80d3f25f00  cmp     dword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fcdb0 (00007ffe`a87e4130)],0"><pre><code>cmp     dword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fcdb0</pre></code></td>
+</tr><tr class="">
+<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ffe`488b6db0 7406            je      00007ffe`488b6db8"><a href="#M00_L00"><pre><code>je      M00_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488b6db2 ff1590dff25f    call    qword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fd9c8 (00007ffe`a87e4d48)]"><pre><code>call    qword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fd9c8</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M00_L00" class="label" data-label="M00_L00"><pre><code>M00_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ffe`488b6db8 488b5598        mov     rdx,qword ptr [rbp-68h]"><pre><code>mov     rdx,qword ptr [rbp-68h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dbc 48895610        mov     qword ptr [rsi+10h],rdx"><pre><code>mov     qword ptr [rsi+10h],rdx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dc0 c6460c01        mov     byte ptr [rsi+0Ch],1"><pre><code>mov     byte ptr [rsi+0Ch],1</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dc4 488d65c8        lea     rsp,[rbp-38h]"><pre><code>lea     rsp,[rbp-38h]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dc8 5b              pop     rbx"><pre><code>pop     rbx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dc9 5e              pop     rsi"><pre><code>pop     rsi</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dca 5f              pop     rdi"><pre><code>pop     rdi</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dcb 415c            pop     r12"><pre><code>pop     r12</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dcd 415d            pop     r13"><pre><code>pop     r13</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dcf 415e            pop     r14"><pre><code>pop     r14</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dd1 415f            pop     r15"><pre><code>pop     r15</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dd3 5d              pop     rbp"><pre><code>pop     rbp</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dd4 c3              ret"><pre><code>ret</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dd5 0000            add     byte ptr [rax],al"><pre><code>add     byte ptr [rax],al</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dd7 0019            add     byte ptr [rcx],bl"><pre><code>add     byte ptr [rcx],bl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6dd9 1009            adc     byte ptr [rcx],cl"><pre><code>adc     byte ptr [rcx],cl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6ddb 0010            add     byte ptr [rax],dl"><pre><code>add     byte ptr [rax],dl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6ddd c20c30          ret     300Ch"><pre><code>ret     300Ch</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6de0 0b600a          or      esp,dword ptr [rax+0Ah]"><pre><code>or      esp,dword ptr [rax+0Ah]</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488b6de3 7009            jo      00007ffe`488b6dee"><pre><code>jo      00007ffe`488b6dee</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table></body></html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for NativeInteropStringNetFwkBench.CppCli: DefaultJob</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+</head><body><table><tbody>
+<tr><th colspan="2" style="text-align: left;">NativeInterop.NativeInteropStringNetFwkBench.CppCli()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ffe`4889885b 488b0c25a0935b14 mov     rcx,qword ptr [145B93A0h]"><pre><code>mov     rcx,qword ptr [145B93A0h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`48898863 4885c9          test    rcx,rcx"><pre><code>test    rcx,rcx</pre></code></td>
+</tr><tr class="">
+<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ffe`48898866 7404            je      00007ffe`4889886c"><a href="#M00_L00"><pre><code>je      M00_L00</pre></code></a></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`48898868 4883c10c        add     rcx,0Ch"><pre><code>add     rcx,0Ch</pre></code></td>
+</tr><tr class="evenMap">
+<td id="M00_L00" class="label" data-label="M00_L00"><pre><code>M00_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ffe`4889886c 48894c2420      mov     qword ptr [rsp+20h],rcx"><pre><code>mov     qword ptr [rsp+20h],rcx</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`48898871 e84af0ffff      call    00007ffe`488978c0"><pre><code>call    <Module>.GetFirstChar(Char*)</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`48898876 0fb7c0          movzx   eax,ax"><pre><code>movzx   eax,ax</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
+<tr><td colspan="2"><Module>.GetFirstChar(Char*)</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table></body></html>

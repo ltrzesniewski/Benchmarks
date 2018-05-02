@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><head>
+<title>Pretty Output of DisassemblyDiagnoser for NativeInteropNetCoreBench.Delegate: DefaultJob</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+
+<style type='text/css'>
+    td.label:hover { cursor: pointer; background-color: yellow !important; }
+    td.highlighted { background-color: yellow !important; }
+</style>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<script>$(document).ready(function () {
+    var selectedIndex = 0;
+
+    function highlight() {
+        $('td.reference.highlighted').removeClass('highlighted');
+
+        var selectedLabel = $(this).attr('data-label');
+        if (selectedLabel) {
+            $('td.reference[data-reference=' + selectedLabel + ']').addClass('highlighted');
+        }
+        selectedIndex = 0;
+    }
+
+    function selectNext() {
+        var $highlighted = $('td.reference.highlighted');
+        var selected = $highlighted[selectedIndex++ % $highlighted.length];
+
+        if (selected) {
+            var selectedReference = $(selected).attr('id');
+            if (selectedReference) {
+                window.location.hash = '#' + selectedReference;
+            }
+        }
+    }
+
+    $('td.label').on('click', highlight);
+
+    $(document).on('keydown', function (event) {
+        if (event.keyCode == 114) { // F3
+            event.preventDefault();
+            // Remap F3 to some other key that the browser doesn't care about
+            selectNext();
+        }
+    });
+});</script>
+</head><body><table><tbody>
+<tr><th colspan="2" style="text-align: left;">NativeInterop.NativeInteropNetCoreBench.Delegate()</th><th></th></tr>
+<tr class="">
+<td></td><td title="00007ffe`0b761a94 48b9b0147d0bfe7f0000 mov rcx,7FFE0B7D14B0h"><pre><code>mov     rcx,7FFE0B7D14B0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b761a9e ba01000000      mov     edx,1"><pre><code>mov     edx,1</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b761aa3 e8c839ad5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)"><pre><code>call    coreclr!MetaDataGetDispenser+0x76730</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b761aa8 48b9a06d2f995d010000 mov rcx,15D992F6DA0h"><pre><code>mov     rcx,15D992F6DA0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b761ab2 488b01          mov     rax,qword ptr [rcx]"><pre><code>mov     rax,qword ptr [rcx]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b761ab5 488b4808        mov     rcx,qword ptr [rax+8]"><pre><code>mov     rcx,qword ptr [rax+8]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b761ab9 ba0e000000      mov     edx,0Eh"><pre><code>mov     edx,0Eh</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b761abe 41b803000000    mov     r8d,3"><pre><code>mov     r8d,3</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`0b761ac4 488b4018        mov     rax,qword ptr [rax+18h]"><pre><code>mov     rax,qword ptr [rax+18h]</pre></code></td>
+</tr><tr><td colspan="{2}">&nbsp;</td></tr>
+</tbody></table></body></html>

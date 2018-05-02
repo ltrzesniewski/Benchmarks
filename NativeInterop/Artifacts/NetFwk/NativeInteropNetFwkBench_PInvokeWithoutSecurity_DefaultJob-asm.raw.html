@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' />
+<title>Output of DisassemblyDiagnoser for NativeInteropNetFwkBench.PInvokeWithoutSecurity: DefaultJob</title>
+
+<style type="text/css">
+    pre { margin: 0px; }
+    table { border-collapse:collapse; }
+    td.perMethod { border-top: 1px black solid; }
+    tr.evenMap td { background-color: #F5F5F5; }  
+</style>
+</head>
+<body>
+<table>
+<tbody>
+<tr><th colspan="2" id="140730115450112" style="text-align: left;">00007ffe`488a6500 NativeInterop.NativeInteropNetFwkBench.PInvokeWithoutSecurity()</th><th></th></tr>
+<tr class="">
+<td><pre><code>00007ffe`488a6535 4533db          xor     r11d,r11d</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a6538 b90e000000      mov     ecx,0Eh</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a653d ba03000000      mov     edx,3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a6542 48b8f8779448fe7f0000 mov rax,7FFE489477F8h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a654c 488945a0        mov     qword ptr [rbp-60h],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a6550 488d0516000000  lea     rax,[00007ffe`488a656d]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a6557 488945b8        mov     qword ptr [rbp-48h],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a655b 488d4590        lea     rax,[rbp-70h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a655f 48894610        mov     qword ptr [rsi+10h],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a6563 c6460c00        mov     byte ptr [rsi+0Ch],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a6567 ff156b130a00    call    qword ptr [00007ffe`489478d8]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a656d c6460c01        mov     byte ptr [rsi+0Ch],1</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a6571 833db8dbf35f00  cmp     dword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fcdb0 (00007ffe`a87e4130)],0</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a6578 7406            je      00007ffe`488a6580</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a657a ff15c8e7f35f    call    qword ptr [clr!LegacyNGenTryEnumerateFusionCache+0x2fd9c8 (00007ffe`a87e4d48)]</pre></code></td>
+<td>not managed method</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a6580 488b5598        mov     rdx,qword ptr [rbp-68h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`488a6584 48895610        mov     qword ptr [rsi+10h],rdx</pre></code></td>
+<td></td>
+</tr>
+<tr><td colspan="{2}">&nbsp;</td></tr>
+<tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
+<tr><td colspan="2">NativeInterop.NativeInteropNetFwkBench.MultiplyPInvokeWithoutSecurity(Int32, Int32)</td></tr>
+<tr><td colspan="{2}"></td></tr>
+</tbody></table></body></html>
