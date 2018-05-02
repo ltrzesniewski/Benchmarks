@@ -70,3 +70,27 @@ Frequency=3515629 Hz, Resolution=284.4441 ns, Timer=TSC
 |                  CppCli |         10.619 ns |       0.0054 ns |       0.0045 ns |          7.60 |       0.02 |
 |            CppCliDirect |          8.147 ns |       0.0183 ns |       0.0171 ns |          5.83 |       0.02 |
 
+## NativeInteropStringNetCoreBench
+
+``` ini
+
+BenchmarkDotNet=v0.10.14, OS=Windows 10.0.16299.309 (1709/FallCreatorsUpdate/Redstone3)
+Intel Core i7-7700 CPU 3.60GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
+Frequency=3515629 Hz, Resolution=284.4441 ns, Timer=TSC
+.NET Core SDK=2.1.104
+  [Host]     : .NET Core 2.0.6 (CoreCLR 4.6.26212.01, CoreFX 4.6.26212.01), 64bit RyuJIT
+  DefaultJob : .NET Core 2.0.6 (CoreCLR 4.6.26212.01, CoreFX 4.6.26212.01), 64bit RyuJIT
+
+
+```
+|                  Method |              Mean |           Error |          StdDev |        Scaled |  ScaledSD |
+|------------------------ |------------------:|----------------:|----------------:|--------------:|----------:|
+|                 Managed |          2.252 ns |       0.0052 ns |       0.0043 ns |          1.00 |      0.00 |
+|                 PInvoke |          8.472 ns |       0.0274 ns |       0.0243 ns |          3.76 |      0.01 |
+|                Delegate |         14.959 ns |       0.0203 ns |       0.0169 ns |          6.64 |      0.01 |
+|              CalliFixed |         44.688 ns |       0.1877 ns |       0.1756 ns |         19.84 |      0.08 |
+|          CalliCustomPin |         41.388 ns |       0.0614 ns |       0.0513 ns |         18.38 |      0.04 |
+| CalliCustomPinWithLocal |         41.235 ns |       0.1477 ns |       0.1309 ns |         18.31 |      0.07 |
+|             CalliString | 65,242,437.261 ns | 162,803.3846 ns | 144,320.9458 ns | 28,972,131.58 | 81,780.76 |
+|              CalliByRef |        103.151 ns |       0.4161 ns |       0.3689 ns |         45.81 |      0.18 |
+

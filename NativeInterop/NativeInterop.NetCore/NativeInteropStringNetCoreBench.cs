@@ -7,7 +7,7 @@ using InlineIL;
 namespace NativeInterop
 {
     [SuppressUnmanagedCodeSecurity]
-    public unsafe class NativeInteropStringNetFwkBench
+    public unsafe class NativeInteropStringNetCoreBench
     {
         // Use a large string: if it gets copied it'll show up in the results
         private static readonly string Value = "foo" + new string('o', 64 * 1024 * 1024);
@@ -122,11 +122,5 @@ namespace NativeInterop
             IL.Emit.Calli(new StandAloneMethodSig(CallingConvention.StdCall, typeof(char), typeof(char).MakeByRefType()));
             return IL.Return<char>();
         }
-
-        [Benchmark]
-        public char CppCli() => NativeInterop.CppCli.GetFirstChar(Value);
-
-        [Benchmark]
-        public char CppCliDirect() => NativeInterop.CppCli.GetFirstCharDirect(Value);
     }
 }
