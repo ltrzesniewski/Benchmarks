@@ -9,10 +9,10 @@ Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cor
 ```
 |                 Method |      Mean |     Error |    StdDev | Scaled | ScaledSD |
 |----------------------- |----------:|----------:|----------:|-------:|---------:|
-|                Managed | 0.6763 ns | 0.0047 ns | 0.0044 ns |   1.00 |     0.00 |
-| PInvokeWithoutSecurity | 5.6360 ns | 0.0266 ns | 0.0236 ns |   8.33 |     0.06 |
-|    PInvokeWithSecurity | 8.8015 ns | 0.0838 ns | 0.0699 ns |  13.01 |     0.13 |
-|               Delegate | 8.5855 ns | 0.0226 ns | 0.0188 ns |  12.70 |     0.08 |
-|                  Calli | 5.4197 ns | 0.0343 ns | 0.0320 ns |   8.01 |     0.07 |
-|                 CppCli | 9.0576 ns | 0.0853 ns | 0.0798 ns |  13.39 |     0.14 |
-|           CppCliDirect | 5.6554 ns | 0.0420 ns | 0.0393 ns |   8.36 |     0.08 |
+|                Managed | 0.6723 ns | 0.0050 ns | 0.0041 ns |   1.00 |     0.00 |
+| PInvokeWithoutSecurity | 5.6039 ns | 0.0049 ns | 0.0043 ns |   8.34 |     0.05 |
+|    PInvokeWithSecurity | 8.7801 ns | 0.0661 ns | 0.0618 ns |  13.06 |     0.12 |
+|               Delegate | 8.2446 ns | 0.0344 ns | 0.0305 ns |  12.26 |     0.08 |
+|                  Calli | 5.4057 ns | 0.0395 ns | 0.0370 ns |   8.04 |     0.07 |
+|                 CppCli | 8.9838 ns | 0.0506 ns | 0.0422 ns |  13.36 |     0.10 |
+|           CppCliDirect | 5.7095 ns | 0.0684 ns | 0.0606 ns |   8.49 |     0.10 |

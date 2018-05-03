@@ -9,13 +9,13 @@ Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cor
 ```
 |                  Method |               Mean |           Error |          StdDev |        Scaled |   ScaledSD |
 |------------------------ |-------------------:|----------------:|----------------:|--------------:|-----------:|
-|                 Managed |          0.9254 ns |       0.0084 ns |       0.0070 ns |          1.00 |       0.00 |
-|                 PInvoke |          6.5183 ns |       0.0362 ns |       0.0321 ns |          7.04 |       0.06 |
-|                Delegate |          8.6131 ns |       0.1921 ns |       0.1703 ns |          9.31 |       0.19 |
-|              CalliFixed |         34.0910 ns |       0.3785 ns |       0.3355 ns |         36.84 |       0.44 |
-|          CalliCustomPin |         39.7228 ns |       0.7810 ns |       0.9297 ns |         42.93 |       1.03 |
-| CalliCustomPinWithLocal |         36.0272 ns |       0.7230 ns |       0.8326 ns |         38.93 |       0.92 |
-|             CalliString | 48,566,205.8004 ns | 823,417.1061 ns | 729,937.7455 ns | 52,484,101.89 | 849,725.92 |
-|              CalliByRef |         86.4328 ns |       1.7202 ns |       2.2964 ns |         93.41 |       2.52 |
-|                  CppCli |          8.5173 ns |       0.2022 ns |       0.2834 ns |          9.20 |       0.31 |
-|            CppCliDirect |          6.5150 ns |       0.0281 ns |       0.0219 ns |          7.04 |       0.06 |
+|                 Managed |          0.9284 ns |       0.0114 ns |       0.0101 ns |          1.00 |       0.00 |
+|                 PInvoke |          6.5058 ns |       0.0689 ns |       0.0644 ns |          7.01 |       0.10 |
+|                Delegate |          9.1327 ns |       0.0912 ns |       0.0808 ns |          9.84 |       0.13 |
+|              CalliFixed |         33.8796 ns |       0.4559 ns |       0.4265 ns |         36.49 |       0.58 |
+|          CalliCustomPin |         35.2593 ns |       0.7229 ns |       1.1039 ns |         37.98 |       1.23 |
+| CalliCustomPinWithLocal |         34.6123 ns |       0.7965 ns |       0.7450 ns |         37.28 |       0.87 |
+|             CalliString | 47,882,284.4625 ns | 507,481.6980 ns | 449,869.2629 ns | 51,578,467.30 | 707,137.78 |
+|              CalliByRef |         82.0797 ns |       0.7486 ns |       0.7003 ns |         88.42 |       1.17 |
+|                  CppCli |          8.2391 ns |       0.1065 ns |       0.0996 ns |          8.88 |       0.14 |
+|            CppCliDirect |          6.5807 ns |       0.0586 ns |       0.0549 ns |          7.09 |       0.09 |

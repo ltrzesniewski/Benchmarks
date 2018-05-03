@@ -29,138 +29,391 @@
 <tbody>
 <tr>
 <td style="vertical-align:top;"><pre><code>
-00007ffe`0b752820 NativeInterop.NativeInteropStringNetCoreBench.ManagedImpl(System.String)
-00007ffe`0b752824 4885c9          test    rcx,rcx
-00007ffe`0b752827 7507            jne     00007ffe`0b752830
-00007ffe`0b752829 33c0            xor     eax,eax
-00007ffe`0b75282b 4883c428        add     rsp,28h
-00007ffe`0b75282f c3              ret
-00007ffe`0b752830 83790800        cmp     dword ptr [rcx+8],0
-00007ffe`0b752834 7609            jbe     00007ffe`0b75283f
-00007ffe`0b752836 0fb7410c        movzx   eax,word ptr [rcx+0Ch]
+00007ffe`167b1f40 NativeInterop.NativeInteropStringNetCoreBench.ManagedImpl(System.String)
+00007ffe`167b1f40 4883ec28        sub     rsp,28h
+00007ffe`167b1f44 4885c9          test    rcx,rcx
+00007ffe`167b1f47 7507            jne     00007ffe`167b1f50
+00007ffe`167b1f49 33c0            xor     eax,eax
+00007ffe`167b1f4b 4883c428        add     rsp,28h
+00007ffe`167b1f4f c3              ret
+00007ffe`167b1f50 83790800        cmp     dword ptr [rcx+8],0
+00007ffe`167b1f54 7609            jbe     00007ffe`167b1f5f
+00007ffe`167b1f56 0fb7410c        movzx   eax,word ptr [rcx+0Ch]
+00007ffe`167b1f5a 4883c428        add     rsp,28h
+00007ffe`167b1f5e c3              ret
+00007ffe`167b1f5f e8dc35c35f      call    coreclr!GetCLRRuntimeHost+0x7de60 (00007ffe`763e5540)
+00007ffe`167b1f64 cc              int     3
+00007ffe`167b1f65 0000            add     byte ptr [rax],al
+00007ffe`167b1f67 0019            add     byte ptr [rcx],bl
+00007ffe`167b1f69 0401            add     al,1
+00007ffe`167b1f6b 000442          add     byte ptr [rdx+rax*2],al
+00007ffe`167b1f6e 0000            add     byte ptr [rax],al
+00007ffe`167b1f70 3e0000          add     byte ptr ds:[rax],al
+00007ffe`167b1f73 0000            add     byte ptr [rax],al
+00007ffe`167b1f75 0000            add     byte ptr [rax],al
+00007ffe`167b1f77 007051          add     byte ptr [rax+51h],dh
+00007ffe`167b1f7a 8b16            mov     edx,dword ptr [rsi]
+00007ffe`167b1f7c fe              ???
+00007ffe`167b1f7d 7f00            jg      00007ffe`167b1f7f
 
-00007ffe`0b751ad0 NativeInterop.NativeInteropStringNetCoreBench.Managed()
-00007ffe`0b751ad4 48b9b0147c0bfe7f0000 mov rcx,7FFE0B7C14B0h
-00007ffe`0b751ade ba02000000      mov     edx,2
-00007ffe`0b751ae3 e88839ae5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)
-00007ffe`0b751ae8 48b9a86dc3c414020000 mov rcx,214C4C36DA8h
-00007ffe`0b751af2 488b09          mov     rcx,qword ptr [rcx]
-00007ffe`0b751af5 48b8384d730bfe7f0000 mov rax,7FFE0B734D38h
+00007ffe`167b11f0 NativeInterop.NativeInteropStringNetCoreBench.Managed()
+00007ffe`167b11f0 4883ec28        sub     rsp,28h
+00007ffe`167b11f4 48b9b0148216fe7f0000 mov rcx,7FFE168214B0h
+00007ffe`167b11fe ba02000000      mov     edx,2
+00007ffe`167b1203 e86842af5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`762a5470)
+00007ffe`167b1208 48b9a86df9be98010000 mov rcx,198BEF96DA8h
+00007ffe`167b1212 488b09          mov     rcx,qword ptr [rcx]
+00007ffe`167b1215 48b8384d7916fe7f0000 mov rax,7FFE16794D38h
+00007ffe`167b121f 4883c428        add     rsp,28h
+00007ffe`167b1223 48ffe0          jmp     rax
+00007ffe`167b1226 0000            add     byte ptr [rax],al
+00007ffe`167b1228 190401          sbb     dword ptr [rcx+rax],eax
+00007ffe`167b122b 000442          add     byte ptr [rdx+rax*2],al
+00007ffe`167b122e 0000            add     byte ptr [rax],al
+00007ffe`167b1230 3e0000          add     byte ptr ds:[rax],al
+00007ffe`167b1233 0000            add     byte ptr [rax],al
+00007ffe`167b1235 0000            add     byte ptr [rax],al
+00007ffe`167b1237 0030            add     byte ptr [rax],dh
+00007ffe`167b1239 4c8b16          mov     r10,qword ptr [rsi]
+00007ffe`167b123c fe              ???
+00007ffe`167b123d 7f00            jg      00007ffe`167b123f
 
 Method got most probably inlined
 System.String.get_Chars(Int32)
 
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
-00007ffe`0b771ad0 NativeInterop.NativeInteropStringNetCoreBench.PInvoke()
-00007ffe`0b771ada 48b9b0147e0bfe7f0000 mov rcx,7FFE0B7E14B0h
-00007ffe`0b771ae4 ba02000000      mov     edx,2
-00007ffe`0b771ae9 e88239ac5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)
-00007ffe`0b771aee 48b9a86da7b20e020000 mov rcx,20EB2A76DA8h
-00007ffe`0b771af8 488b09          mov     rcx,qword ptr [rcx]
-00007ffe`0b771afb 48b860f8760bfe7f0000 mov rax,7FFE0B76F860h
+00007ffe`167d11f0 NativeInterop.NativeInteropStringNetCoreBench.PInvoke()
+00007ffe`167d11f0 55              push    rbp
+00007ffe`167d11f1 4883ec20        sub     rsp,20h
+00007ffe`167d11f5 488d6c2420      lea     rbp,[rsp+20h]
+00007ffe`167d11fa 48b9b0148416fe7f0000 mov rcx,7FFE168414B0h
+00007ffe`167d1204 ba02000000      mov     edx,2
+00007ffe`167d1209 e86242ad5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`762a5470)
+00007ffe`167d120e 48b9a86d243aa8010000 mov rcx,1A83A246DA8h
+00007ffe`167d1218 488b09          mov     rcx,qword ptr [rcx]
+00007ffe`167d121b 48b880ef7c16fe7f0000 mov rax,7FFE167CEF80h
+00007ffe`167d1225 488d6500        lea     rsp,[rbp]
+00007ffe`167d1229 5d              pop     rbp
+00007ffe`167d122a 48ffe0          jmp     rax
+00007ffe`167d122d 0000            add     byte ptr [rax],al
+00007ffe`167d122f 0019            add     byte ptr [rcx],bl
+00007ffe`167d1231 0502000532      add     eax,32050002h
+00007ffe`167d1236 01503e          add     dword ptr [rax+3Eh],edx
+00007ffe`167d1239 0000            add     byte ptr [rax],al
+00007ffe`167d123b 0000            add     byte ptr [rax],al
+00007ffe`167d123d 0000            add     byte ptr [rax],al
+00007ffe`167d123f 0000            add     byte ptr [rax],al
+00007ffe`167d1241 0000            add     byte ptr [rax],al
+00007ffe`167d1243 0000            add     byte ptr [rax],al
 
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
-00007ffe`0b751ad0 NativeInterop.NativeInteropStringNetCoreBench.Delegate()
-00007ffe`0b751ad4 48b9b0147c0bfe7f0000 mov rcx,7FFE0B7C14B0h
-00007ffe`0b751ade ba02000000      mov     edx,2
-00007ffe`0b751ae3 e88839ae5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)
-00007ffe`0b751ae8 48b9b06de11362010000 mov rcx,16213E16DB0h
-00007ffe`0b751af2 488b01          mov     rax,qword ptr [rcx]
-00007ffe`0b751af5 48b9a86de11362010000 mov rcx,16213E16DA8h
-00007ffe`0b751aff 488b11          mov     rdx,qword ptr [rcx]
-00007ffe`0b751b02 488b4808        mov     rcx,qword ptr [rax+8]
-00007ffe`0b751b06 488b4018        mov     rax,qword ptr [rax+18h]
+00007ffe`167e11f0 NativeInterop.NativeInteropStringNetCoreBench.Delegate()
+00007ffe`167e11f0 4883ec28        sub     rsp,28h
+00007ffe`167e11f4 48b9b0148516fe7f0000 mov rcx,7FFE168514B0h
+00007ffe`167e11fe ba02000000      mov     edx,2
+00007ffe`167e1203 e86842ac5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`762a5470)
+00007ffe`167e1208 48b9b06daaa41f020000 mov rcx,21FA4AA6DB0h
+00007ffe`167e1212 488b01          mov     rax,qword ptr [rcx]
+00007ffe`167e1215 48b9a86daaa41f020000 mov rcx,21FA4AA6DA8h
+00007ffe`167e121f 488b11          mov     rdx,qword ptr [rcx]
+00007ffe`167e1222 488b4808        mov     rcx,qword ptr [rax+8]
+00007ffe`167e1226 488b4018        mov     rax,qword ptr [rax+18h]
+00007ffe`167e122a 4883c428        add     rsp,28h
+00007ffe`167e122e 48ffe0          jmp     rax
+00007ffe`167e1231 0000            add     byte ptr [rax],al
+00007ffe`167e1233 0019            add     byte ptr [rcx],bl
+00007ffe`167e1235 0401            add     al,1
+00007ffe`167e1237 000442          add     byte ptr [rdx+rax*2],al
+00007ffe`167e123a 0000            add     byte ptr [rax],al
+00007ffe`167e123c 3e0000          add     byte ptr ds:[rax],al
+00007ffe`167e123f 0000            add     byte ptr [rax],al
+00007ffe`167e1241 0000            add     byte ptr [rax],al
+00007ffe`167e1243 0000            add     byte ptr [rax],al
+00007ffe`167e1245 0000            add     byte ptr [rax],al
+00007ffe`167e1247 00484c          add     byte ptr [rax+4Ch],cl
 
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
-00007ffe`0b761ad0 NativeInterop.NativeInteropStringNetCoreBench.CalliFixed()
-00007ffe`0b761ae0 48b9b0147d0bfe7f0000 mov rcx,7FFE0B7D14B0h
-00007ffe`0b761aea ba02000000      mov     edx,2
-00007ffe`0b761aef e87c39ad5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)
-00007ffe`0b761af4 49baa86d00904c020000 mov r10,24C90006DA8h
-00007ffe`0b761afe 4d8b12          mov     r10,qword ptr [r10]
-00007ffe`0b761b01 4c8955f8        mov     qword ptr [rbp-8],r10
-00007ffe`0b761b05 488b4df8        mov     rcx,qword ptr [rbp-8]
-00007ffe`0b761b09 4885c9          test    rcx,rcx
-00007ffe`0b761b0c 7404            je      00007ffe`0b761b12
-00007ffe`0b761b0e 4883c10c        add     rcx,0Ch
-00007ffe`0b761b12 49baf0147d0bfe7f0000 mov r10,7FFE0B7D14F0h
-00007ffe`0b761b1c 4d8b12          mov     r10,qword ptr [r10]
-00007ffe`0b761b1f 49bb30ac33f24c020000 mov r11,24CF233AC30h
-00007ffe`0b761b29 e8e222ad5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`6b233e10)
+00007ffe`167b11f0 NativeInterop.NativeInteropStringNetCoreBench.CalliFixed()
+00007ffe`167b11f0 55              push    rbp
+00007ffe`167b11f1 4883ec30        sub     rsp,30h
+00007ffe`167b11f5 488d6c2430      lea     rbp,[rsp+30h]
+00007ffe`167b11fa 33c0            xor     eax,eax
+00007ffe`167b11fc 488945f8        mov     qword ptr [rbp-8],rax
+00007ffe`167b1200 48b9b0148216fe7f0000 mov rcx,7FFE168214B0h
+00007ffe`167b120a ba02000000      mov     edx,2
+00007ffe`167b120f e85c42af5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`762a5470)
+00007ffe`167b1214 49baa86dbc6b03020000 mov r10,2036BBC6DA8h
+00007ffe`167b121e 4d8b12          mov     r10,qword ptr [r10]
+00007ffe`167b1221 4c8955f8        mov     qword ptr [rbp-8],r10
+00007ffe`167b1225 488b4df8        mov     rcx,qword ptr [rbp-8]
+00007ffe`167b1229 4885c9          test    rcx,rcx
+00007ffe`167b122c 7404            je      00007ffe`167b1232
+00007ffe`167b122e 4883c10c        add     rcx,0Ch
+00007ffe`167b1232 49baf0148216fe7f0000 mov r10,7FFE168214F0h
+00007ffe`167b123c 4d8b12          mov     r10,qword ptr [r10]
+00007ffe`167b123f 49bb101d087403020000 mov r11,20374081D10h
+00007ffe`167b1249 e8c22baf5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`762a3e10)
+00007ffe`167b124e 90              nop
+00007ffe`167b124f 488d6500        lea     rsp,[rbp]
+00007ffe`167b1253 5d              pop     rbp
+00007ffe`167b1254 c3              ret
+00007ffe`167b1255 0000            add     byte ptr [rax],al
+00007ffe`167b1257 0019            add     byte ptr [rcx],bl
+00007ffe`167b1259 0502000552      add     eax,52050002h
+00007ffe`167b125e 01503e          add     dword ptr [rax+3Eh],edx
+00007ffe`167b1261 0000            add     byte ptr [rax],al
+00007ffe`167b1263 0000            add     byte ptr [rax],al
+00007ffe`167b1265 0000            add     byte ptr [rax],al
+00007ffe`167b1267 00504c          add     byte ptr [rax+4Ch],dl
+00007ffe`167b126a 8b16            mov     edx,dword ptr [rsi]
+00007ffe`167b126c fe              ???
+00007ffe`167b126d 7f00            jg      00007ffe`167b126f
 
-00007ffe`6ab212f0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
-00007ffe`6ab212f5 b80c000000      mov     eax,0Ch
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-00007ffe`0b771ad0 NativeInterop.NativeInteropStringNetCoreBench.CalliCustomPin()
-00007ffe`0b771ae0 48b9b0147e0bfe7f0000 mov rcx,7FFE0B7E14B0h
-00007ffe`0b771aea ba02000000      mov     edx,2
-00007ffe`0b771aef e87c39ac5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)
-00007ffe`0b771af4 49baa86d931745020000 mov r10,24517936DA8h
-00007ffe`0b771afe 4d8b12          mov     r10,qword ptr [r10]
-00007ffe`0b771b01 4c8955f8        mov     qword ptr [rbp-8],r10
-00007ffe`0b771b05 4c8b55f8        mov     r10,qword ptr [rbp-8]
-00007ffe`0b771b09 498d4a0c        lea     rcx,[r10+0Ch]
-00007ffe`0b771b0d 49baf0147e0bfe7f0000 mov r10,7FFE0B7E14F0h
-00007ffe`0b771b17 4d8b12          mov     r10,qword ptr [r10]
-00007ffe`0b771b1a 49bb402dcf1f45020000 mov r11,2451FCF2D40h
-00007ffe`0b771b24 e8e722ac5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`6b233e10)
-
-00007ffe`6ab212f0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
-00007ffe`6ab212f5 b80c000000      mov     eax,0Ch
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-00007ffe`0b771ad0 NativeInterop.NativeInteropStringNetCoreBench.CalliCustomPinWithLocal()
-00007ffe`0b771ae0 48b9b0147e0bfe7f0000 mov rcx,7FFE0B7E14B0h
-00007ffe`0b771aea ba02000000      mov     edx,2
-00007ffe`0b771aef e87c39ac5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)
-00007ffe`0b771af4 49baa86d009017020000 mov r10,21790006DA8h
-00007ffe`0b771afe 4d8b12          mov     r10,qword ptr [r10]
-00007ffe`0b771b01 4c8955f8        mov     qword ptr [rbp-8],r10
-00007ffe`0b771b05 4c8b55f8        mov     r10,qword ptr [rbp-8]
-00007ffe`0b771b09 498d4a0c        lea     rcx,[r10+0Ch]
-00007ffe`0b771b0d 49baf0147e0bfe7f0000 mov r10,7FFE0B7E14F0h
-00007ffe`0b771b17 4d8b12          mov     r10,qword ptr [r10]
-00007ffe`0b771b1a 49bb402d80e917020000 mov r11,217E9802D40h
-00007ffe`0b771b24 e8e722ac5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`6b233e10)
-
-00007ffe`6ab212f0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
-00007ffe`6ab212f5 b80c000000      mov     eax,0Ch
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-00007ffe`0b761ad0 NativeInterop.NativeInteropStringNetCoreBench.CalliString()
-00007ffe`0b761ada 48b9b0147d0bfe7f0000 mov rcx,7FFE0B7D14B0h
-00007ffe`0b761ae4 ba02000000      mov     edx,2
-00007ffe`0b761ae9 e88239ad5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)
-00007ffe`0b761aee 49baa86d0f6185020000 mov r10,285610F6DA8h
-00007ffe`0b761af8 498b0a          mov     rcx,qword ptr [r10]
-00007ffe`0b761afb 49baf0147d0bfe7f0000 mov r10,7FFE0B7D14F0h
-00007ffe`0b761b05 4d8b12          mov     r10,qword ptr [r10]
-00007ffe`0b761b08 49bb30ac4a6985020000 mov r11,285694AAC30h
-00007ffe`0b761b12 e8f922ad5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`6b233e10)
+00007ffe`737712f0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
+00007ffe`737712f0 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`737712f5 b80c000000      mov     eax,0Ch
+00007ffe`737712fa c3              ret
+00007ffe`737712fb cc              int     3
+00007ffe`737712fc cc              int     3
+00007ffe`737712fd cc              int     3
+00007ffe`737712fe cc              int     3
+00007ffe`737712ff cc              int     3
+00007ffe`73771300 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`73771305 c3              ret
+00007ffe`73771306 cc              int     3
+00007ffe`73771307 cc              int     3
+00007ffe`73771308 cc              int     3
+00007ffe`73771309 cc              int     3
+00007ffe`7377130a cc              int     3
+00007ffe`7377130b cc              int     3
+00007ffe`7377130c cc              int     3
+00007ffe`7377130d cc              int     3
+00007ffe`7377130e cc              int     3
+00007ffe`7377130f cc              int     3
+00007ffe`73771310 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`73771315 c3              ret
+00007ffe`73771316 cc              int     3
+00007ffe`73771317 cc              int     3
+00007ffe`73771318 cc              int     3
+00007ffe`73771319 cc              int     3
 
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
-00007ffe`0b741ad0 NativeInterop.NativeInteropStringNetCoreBench.CalliByRef()
-00007ffe`0b741ada 48b9b0147b0bfe7f0000 mov rcx,7FFE0B7B14B0h
-00007ffe`0b741ae4 ba02000000      mov     edx,2
-00007ffe`0b741ae9 e88239af5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)
-00007ffe`0b741aee 49baa86de4ef06020000 mov r10,206EFE46DA8h
-00007ffe`0b741af8 4d8b12          mov     r10,qword ptr [r10]
-00007ffe`0b741afb 498d4a0c        lea     rcx,[r10+0Ch]
-00007ffe`0b741aff 49baf0147b0bfe7f0000 mov r10,7FFE0B7B14F0h
-00007ffe`0b741b09 4d8b12          mov     r10,qword ptr [r10]
-00007ffe`0b741b0c 49bb100330f806020000 mov r11,206F8300310h
-00007ffe`0b741b16 e8f522af5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`6b233e10)
+00007ffe`167c11f0 NativeInterop.NativeInteropStringNetCoreBench.CalliCustomPin()
+00007ffe`167c11f0 55              push    rbp
+00007ffe`167c11f1 4883ec30        sub     rsp,30h
+00007ffe`167c11f5 488d6c2430      lea     rbp,[rsp+30h]
+00007ffe`167c11fa 33c0            xor     eax,eax
+00007ffe`167c11fc 488945f8        mov     qword ptr [rbp-8],rax
+00007ffe`167c1200 48b9b0148316fe7f0000 mov rcx,7FFE168314B0h
+00007ffe`167c120a ba02000000      mov     edx,2
+00007ffe`167c120f e85c42ae5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`762a5470)
+00007ffe`167c1214 49baa86d0c120a010000 mov r10,10A120C6DA8h
+00007ffe`167c121e 4d8b12          mov     r10,qword ptr [r10]
+00007ffe`167c1221 4c8955f8        mov     qword ptr [rbp-8],r10
+00007ffe`167c1225 4c8b55f8        mov     r10,qword ptr [rbp-8]
+00007ffe`167c1229 498d4a0c        lea     rcx,[r10+0Ch]
+00007ffe`167c122d 49baf0148316fe7f0000 mov r10,7FFE168314F0h
+00007ffe`167c1237 4d8b12          mov     r10,qword ptr [r10]
+00007ffe`167c123a 49bb9081481a0a010000 mov r11,10A1A488190h
+00007ffe`167c1244 e8c72bae5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`762a3e10)
+00007ffe`167c1249 90              nop
+00007ffe`167c124a 488d6500        lea     rsp,[rbp]
+00007ffe`167c124e 5d              pop     rbp
+00007ffe`167c124f c3              ret
+00007ffe`167c1250 190502000552    sbb     dword ptr [00007ffe`68811258],eax
+00007ffe`167c1256 01503e          add     dword ptr [rax+3Eh],edx
+00007ffe`167c1259 0000            add     byte ptr [rax],al
+00007ffe`167c125b 0000            add     byte ptr [rax],al
+00007ffe`167c125d 0000            add     byte ptr [rax],al
+00007ffe`167c125f 0000            add     byte ptr [rax],al
+00007ffe`167c1261 0000            add     byte ptr [rax],al
+00007ffe`167c1263 0000            add     byte ptr [rax],al
+00007ffe`167c1265 0000            add     byte ptr [rax],al
+00007ffe`167c1267 00484c          add     byte ptr [rax+4Ch],cl
 
-00007ffe`6ab212f0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
-00007ffe`6ab212f5 b80c000000      mov     eax,0Ch
+00007ffe`737712f0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
+00007ffe`737712f0 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`737712f5 b80c000000      mov     eax,0Ch
+00007ffe`737712fa c3              ret
+00007ffe`737712fb cc              int     3
+00007ffe`737712fc cc              int     3
+00007ffe`737712fd cc              int     3
+00007ffe`737712fe cc              int     3
+00007ffe`737712ff cc              int     3
+00007ffe`73771300 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`73771305 c3              ret
+00007ffe`73771306 cc              int     3
+00007ffe`73771307 cc              int     3
+00007ffe`73771308 cc              int     3
+00007ffe`73771309 cc              int     3
+00007ffe`7377130a cc              int     3
+00007ffe`7377130b cc              int     3
+00007ffe`7377130c cc              int     3
+00007ffe`7377130d cc              int     3
+00007ffe`7377130e cc              int     3
+00007ffe`7377130f cc              int     3
+00007ffe`73771310 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`73771315 c3              ret
+00007ffe`73771316 cc              int     3
+00007ffe`73771317 cc              int     3
+00007ffe`73771318 cc              int     3
+00007ffe`73771319 cc              int     3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`167c11f0 NativeInterop.NativeInteropStringNetCoreBench.CalliCustomPinWithLocal()
+00007ffe`167c11f0 55              push    rbp
+00007ffe`167c11f1 4883ec30        sub     rsp,30h
+00007ffe`167c11f5 488d6c2430      lea     rbp,[rsp+30h]
+00007ffe`167c11fa 33c0            xor     eax,eax
+00007ffe`167c11fc 488945f8        mov     qword ptr [rbp-8],rax
+00007ffe`167c1200 48b9b0148316fe7f0000 mov rcx,7FFE168314B0h
+00007ffe`167c120a ba02000000      mov     edx,2
+00007ffe`167c120f e85c42ae5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`762a5470)
+00007ffe`167c1214 49baa86d74b4f8010000 mov r10,1F8B4746DA8h
+00007ffe`167c121e 4d8b12          mov     r10,qword ptr [r10]
+00007ffe`167c1221 4c8955f8        mov     qword ptr [rbp-8],r10
+00007ffe`167c1225 4c8b55f8        mov     r10,qword ptr [rbp-8]
+00007ffe`167c1229 498d4a0c        lea     rcx,[r10+0Ch]
+00007ffe`167c122d 49baf0148316fe7f0000 mov r10,7FFE168314F0h
+00007ffe`167c1237 4d8b12          mov     r10,qword ptr [r10]
+00007ffe`167c123a 49bb402baebcf8010000 mov r11,1F8BCAE2B40h
+00007ffe`167c1244 e8c72bae5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`762a3e10)
+00007ffe`167c1249 90              nop
+00007ffe`167c124a 488d6500        lea     rsp,[rbp]
+00007ffe`167c124e 5d              pop     rbp
+00007ffe`167c124f c3              ret
+00007ffe`167c1250 190502000552    sbb     dword ptr [00007ffe`68811258],eax
+00007ffe`167c1256 01503e          add     dword ptr [rax+3Eh],edx
+00007ffe`167c1259 0000            add     byte ptr [rax],al
+00007ffe`167c125b 0000            add     byte ptr [rax],al
+00007ffe`167c125d 0000            add     byte ptr [rax],al
+00007ffe`167c125f 0000            add     byte ptr [rax],al
+00007ffe`167c1261 0000            add     byte ptr [rax],al
+00007ffe`167c1263 0000            add     byte ptr [rax],al
+00007ffe`167c1265 0000            add     byte ptr [rax],al
+00007ffe`167c1267 00504c          add     byte ptr [rax+4Ch],dl
+
+00007ffe`737712f0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
+00007ffe`737712f0 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`737712f5 b80c000000      mov     eax,0Ch
+00007ffe`737712fa c3              ret
+00007ffe`737712fb cc              int     3
+00007ffe`737712fc cc              int     3
+00007ffe`737712fd cc              int     3
+00007ffe`737712fe cc              int     3
+00007ffe`737712ff cc              int     3
+00007ffe`73771300 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`73771305 c3              ret
+00007ffe`73771306 cc              int     3
+00007ffe`73771307 cc              int     3
+00007ffe`73771308 cc              int     3
+00007ffe`73771309 cc              int     3
+00007ffe`7377130a cc              int     3
+00007ffe`7377130b cc              int     3
+00007ffe`7377130c cc              int     3
+00007ffe`7377130d cc              int     3
+00007ffe`7377130e cc              int     3
+00007ffe`7377130f cc              int     3
+00007ffe`73771310 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`73771315 c3              ret
+00007ffe`73771316 cc              int     3
+00007ffe`73771317 cc              int     3
+00007ffe`73771318 cc              int     3
+00007ffe`73771319 cc              int     3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`167e11f0 NativeInterop.NativeInteropStringNetCoreBench.CalliString()
+00007ffe`167e11f0 55              push    rbp
+00007ffe`167e11f1 4883ec30        sub     rsp,30h
+00007ffe`167e11f5 488d6c2430      lea     rbp,[rsp+30h]
+00007ffe`167e11fa 48b9b0148516fe7f0000 mov rcx,7FFE168514B0h
+00007ffe`167e1204 ba02000000      mov     edx,2
+00007ffe`167e1209 e86242ac5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`762a5470)
+00007ffe`167e120e 49baa86d009052020000 mov r10,25290006DA8h
+00007ffe`167e1218 498b0a          mov     rcx,qword ptr [r10]
+00007ffe`167e121b 49baf0148516fe7f0000 mov r10,7FFE168514F0h
+00007ffe`167e1225 4d8b12          mov     r10,qword ptr [r10]
+00007ffe`167e1228 49bbe0db12f652020000 mov r11,252F612DBE0h
+00007ffe`167e1232 e8d92bac5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`762a3e10)
+00007ffe`167e1237 90              nop
+00007ffe`167e1238 488d6500        lea     rsp,[rbp]
+00007ffe`167e123c 5d              pop     rbp
+00007ffe`167e123d c3              ret
+00007ffe`167e123e 0000            add     byte ptr [rax],al
+00007ffe`167e1240 190502000552    sbb     dword ptr [00007ffe`68831248],eax
+00007ffe`167e1246 01503e          add     dword ptr [rax+3Eh],edx
+00007ffe`167e1249 0000            add     byte ptr [rax],al
+00007ffe`167e124b 0000            add     byte ptr [rax],al
+00007ffe`167e124d 0000            add     byte ptr [rax],al
+00007ffe`167e124f 0000            add     byte ptr [rax],al
+00007ffe`167e1251 0000            add     byte ptr [rax],al
+00007ffe`167e1253 0000            add     byte ptr [rax],al
+00007ffe`167e1255 0000            add     byte ptr [rax],al
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+00007ffe`167b11f0 NativeInterop.NativeInteropStringNetCoreBench.CalliByRef()
+00007ffe`167b11f0 55              push    rbp
+00007ffe`167b11f1 4883ec30        sub     rsp,30h
+00007ffe`167b11f5 488d6c2430      lea     rbp,[rsp+30h]
+00007ffe`167b11fa 48b9b0148216fe7f0000 mov rcx,7FFE168214B0h
+00007ffe`167b1204 ba02000000      mov     edx,2
+00007ffe`167b1209 e86242af5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`762a5470)
+00007ffe`167b120e 49baa86dfcf3cb010000 mov r10,1CBF3FC6DA8h
+00007ffe`167b1218 4d8b12          mov     r10,qword ptr [r10]
+00007ffe`167b121b 498d4a0c        lea     rcx,[r10+0Ch]
+00007ffe`167b121f 49baf0148216fe7f0000 mov r10,7FFE168214F0h
+00007ffe`167b1229 4d8b12          mov     r10,qword ptr [r10]
+00007ffe`167b122c 49bb101de0e3cb010000 mov r11,1CBE3E01D10h
+00007ffe`167b1236 e8d52baf5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`762a3e10)
+00007ffe`167b123b 90              nop
+00007ffe`167b123c 488d6500        lea     rsp,[rbp]
+00007ffe`167b1240 5d              pop     rbp
+00007ffe`167b1241 c3              ret
+00007ffe`167b1242 0000            add     byte ptr [rax],al
+00007ffe`167b1244 190502000552    sbb     dword ptr [00007ffe`6880124c],eax
+00007ffe`167b124a 01503e          add     dword ptr [rax+3Eh],edx
+00007ffe`167b124d 0000            add     byte ptr [rax],al
+00007ffe`167b124f 0000            add     byte ptr [rax],al
+00007ffe`167b1251 0000            add     byte ptr [rax],al
+00007ffe`167b1253 0000            add     byte ptr [rax],al
+00007ffe`167b1255 0000            add     byte ptr [rax],al
+00007ffe`167b1257 00484c          add     byte ptr [rax+4Ch],cl
+00007ffe`167b125a 8b16            mov     edx,dword ptr [rsi]
+
+00007ffe`737712f0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()
+00007ffe`737712f0 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`737712f5 b80c000000      mov     eax,0Ch
+00007ffe`737712fa c3              ret
+00007ffe`737712fb cc              int     3
+00007ffe`737712fc cc              int     3
+00007ffe`737712fd cc              int     3
+00007ffe`737712fe cc              int     3
+00007ffe`737712ff cc              int     3
+00007ffe`73771300 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`73771305 c3              ret
+00007ffe`73771306 cc              int     3
+00007ffe`73771307 cc              int     3
+00007ffe`73771308 cc              int     3
+00007ffe`73771309 cc              int     3
+00007ffe`7377130a cc              int     3
+00007ffe`7377130b cc              int     3
+00007ffe`7377130c cc              int     3
+00007ffe`7377130d cc              int     3
+00007ffe`7377130e cc              int     3
+00007ffe`7377130f cc              int     3
+00007ffe`73771310 0f1f440000      nop     dword ptr [rax+rax]
+00007ffe`73771315 c3              ret
+00007ffe`73771316 cc              int     3
+00007ffe`73771317 cc              int     3
+00007ffe`73771318 cc              int     3
+00007ffe`73771319 cc              int     3
 
 </code></pre></td>
 </tr>

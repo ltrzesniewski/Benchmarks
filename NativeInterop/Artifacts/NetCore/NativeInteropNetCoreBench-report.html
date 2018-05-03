@@ -15,7 +15,7 @@
 <pre><code>
 BenchmarkDotNet=v0.10.14, OS=Windows 10.0.17134
 Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
-.NET Core SDK=2.1.104
+.NET Core SDK=2.1.300-preview2-008533
   [Host]     : .NET Core 2.0.6 (CoreCLR 4.6.26212.01, CoreFX 4.6.26212.01), 64bit RyuJIT
   DefaultJob : .NET Core 2.0.6 (CoreCLR 4.6.26212.01, CoreFX 4.6.26212.01), 64bit RyuJIT
 </code></pre>
@@ -24,11 +24,11 @@ Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cor
 <table>
 <thead><tr><th>          Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Scaled</th><th>ScaledSD</th>
 </tr>
-</thead><tbody><tr><td>Managed</td><td>0.6687 ns</td><td>0.0007 ns</td><td>0.0005 ns</td><td>1.00</td><td>0.00</td>
-</tr><tr><td>PInvokeWithoutSecurity</td><td>5.6523 ns</td><td>0.0479 ns</td><td>0.0400 ns</td><td>8.45</td><td>0.06</td>
-</tr><tr><td>PInvokeWithSecurity</td><td>5.6202 ns</td><td>0.0314 ns</td><td>0.0294 ns</td><td>8.41</td><td>0.04</td>
-</tr><tr><td>Delegate</td><td>11.9801 ns</td><td>0.0636 ns</td><td>0.0595 ns</td><td>17.92</td><td>0.09</td>
-</tr><tr><td>Calli</td><td>5.6552 ns</td><td>0.0316 ns</td><td>0.0264 ns</td><td>8.46</td><td>0.04</td>
+</thead><tbody><tr><td>Managed</td><td>0.8720 ns</td><td>0.0080 ns</td><td>0.0071 ns</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>PInvokeWithoutSecurity</td><td>5.6539 ns</td><td>0.0410 ns</td><td>0.0342 ns</td><td>6.48</td><td>0.06</td>
+</tr><tr><td>PInvokeWithSecurity</td><td>5.6037 ns</td><td>0.0058 ns</td><td>0.0055 ns</td><td>6.43</td><td>0.05</td>
+</tr><tr><td>Delegate</td><td>12.0347 ns</td><td>0.0123 ns</td><td>0.0103 ns</td><td>13.80</td><td>0.11</td>
+</tr><tr><td>Calli</td><td>5.6390 ns</td><td>0.0426 ns</td><td>0.0356 ns</td><td>6.47</td><td>0.06</td>
 </tr></tbody></table>
 </body>
 </html>

@@ -11,67 +11,247 @@
 <body>
 <table>
 <tbody>
-<tr><th colspan="2" id="140729090710224" style="text-align: left;">00007ffe`0b761ad0 NativeInterop.NativeInteropStringNetCoreBench.CalliFixed()</th><th></th></tr>
+<tr><th colspan="2" id="140729275585008" style="text-align: left;">00007ffe`167b11f0 NativeInterop.NativeInteropStringNetCoreBench.CalliFixed()</th><th></th></tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761ae0 48b9b0147d0bfe7f0000 mov rcx,7FFE0B7D14B0h</pre></code></td>
+<td><pre><code>00007ffe`167b11f0 55              push    rbp</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761aea ba02000000      mov     edx,2</pre></code></td>
+<td><pre><code>00007ffe`167b11f1 4883ec30        sub     rsp,30h</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761aef e87c39ad5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`6b235470)</pre></code></td>
+<td><pre><code>00007ffe`167b11f5 488d6c2430      lea     rbp,[rsp+30h]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b11fa 33c0            xor     eax,eax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b11fc 488945f8        mov     qword ptr [rbp-8],rax</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b1200 48b9b0148216fe7f0000 mov rcx,7FFE168214B0h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b120a ba02000000      mov     edx,2</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b120f e85c42af5f      call    coreclr!MetaDataGetDispenser+0x76730 (00007ffe`762a5470)</pre></code></td>
 <td>not managed method</td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761af4 49baa86d00904c020000 mov r10,24C90006DA8h</pre></code></td>
+<td><pre><code>00007ffe`167b1214 49baa86dbc6b03020000 mov r10,2036BBC6DA8h</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761afe 4d8b12          mov     r10,qword ptr [r10]</pre></code></td>
+<td><pre><code>00007ffe`167b121e 4d8b12          mov     r10,qword ptr [r10]</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761b01 4c8955f8        mov     qword ptr [rbp-8],r10</pre></code></td>
+<td><pre><code>00007ffe`167b1221 4c8955f8        mov     qword ptr [rbp-8],r10</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761b05 488b4df8        mov     rcx,qword ptr [rbp-8]</pre></code></td>
+<td><pre><code>00007ffe`167b1225 488b4df8        mov     rcx,qword ptr [rbp-8]</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761b09 4885c9          test    rcx,rcx</pre></code></td>
+<td><pre><code>00007ffe`167b1229 4885c9          test    rcx,rcx</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761b0c 7404            je      00007ffe`0b761b12</pre></code></td>
+<td><pre><code>00007ffe`167b122c 7404            je      00007ffe`167b1232</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761b0e 4883c10c        add     rcx,0Ch</pre></code></td>
+<td><pre><code>00007ffe`167b122e 4883c10c        add     rcx,0Ch</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761b12 49baf0147d0bfe7f0000 mov r10,7FFE0B7D14F0h</pre></code></td>
+<td><pre><code>00007ffe`167b1232 49baf0148216fe7f0000 mov r10,7FFE168214F0h</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761b1c 4d8b12          mov     r10,qword ptr [r10]</pre></code></td>
+<td><pre><code>00007ffe`167b123c 4d8b12          mov     r10,qword ptr [r10]</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761b1f 49bb30ac33f24c020000 mov r11,24CF233AC30h</pre></code></td>
+<td><pre><code>00007ffe`167b123f 49bb101d087403020000 mov r11,20374081D10h</pre></code></td>
 <td></td>
 </tr>
 <tr class="">
-<td><pre><code>00007ffe`0b761b29 e8e222ad5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`6b233e10)</pre></code></td>
+<td><pre><code>00007ffe`167b1249 e8c22baf5f      call    coreclr!MetaDataGetDispenser+0x750d0 (00007ffe`762a3e10)</pre></code></td>
 <td>not managed method</td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b124e 90              nop</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b124f 488d6500        lea     rsp,[rbp]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b1253 5d              pop     rbp</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b1254 c3              ret</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b1255 0000            add     byte ptr [rax],al</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b1257 0019            add     byte ptr [rcx],bl</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b1259 0502000552      add     eax,52050002h</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b125e 01503e          add     dword ptr [rax+3Eh],edx</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b1261 0000            add     byte ptr [rax],al</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b1263 0000            add     byte ptr [rax],al</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b1265 0000            add     byte ptr [rax],al</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b1267 00504c          add     byte ptr [rax+4Ch],dl</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b126a 8b16            mov     edx,dword ptr [rsi]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b126c fe              ???</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`167b126d 7f00            jg      00007ffe`167b126f</pre></code></td>
+<td></td>
 </tr>
 <tr><td colspan="{2}">&nbsp;</td></tr>
-<tr><th colspan="2" id="140730688475888" style="text-align: left;">00007ffe`6ab212f0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()</th><th></th></tr>
+<tr><th colspan="2" id="140730835604208" style="text-align: left;">00007ffe`737712f0 System.Runtime.CompilerServices.RuntimeHelpers.get_OffsetToStringData()</th><th></th></tr>
 <tr class="">
-<td><pre><code>00007ffe`6ab212f5 b80c000000      mov     eax,0Ch</pre></code></td>
+<td><pre><code>00007ffe`737712f0 0f1f440000      nop     dword ptr [rax+rax]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`737712f5 b80c000000      mov     eax,0Ch</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`737712fa c3              ret</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`737712fb cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`737712fc cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`737712fd cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`737712fe cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`737712ff cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771300 0f1f440000      nop     dword ptr [rax+rax]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771305 c3              ret</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771306 cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771307 cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771308 cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771309 cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`7377130a cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`7377130b cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`7377130c cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`7377130d cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`7377130e cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`7377130f cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771310 0f1f440000      nop     dword ptr [rax+rax]</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771315 c3              ret</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771316 cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771317 cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771318 cc              int     3</pre></code></td>
+<td></td>
+</tr>
+<tr class="">
+<td><pre><code>00007ffe`73771319 cc              int     3</pre></code></td>
 <td></td>
 </tr>
 <tr><td colspan="{2}">&nbsp;</td></tr>

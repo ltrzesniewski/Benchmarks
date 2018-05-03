@@ -15,7 +15,7 @@
 <pre><code>
 BenchmarkDotNet=v0.10.14, OS=Windows 10.0.17134
 Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
-.NET Core SDK=2.1.104
+.NET Core SDK=2.1.300-preview2-008533
   [Host]     : .NET Core 2.0.6 (CoreCLR 4.6.26212.01, CoreFX 4.6.26212.01), 64bit RyuJIT
   DefaultJob : .NET Core 2.0.6 (CoreCLR 4.6.26212.01, CoreFX 4.6.26212.01), 64bit RyuJIT
 </code></pre>
@@ -24,14 +24,14 @@ Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cor
 <table>
 <thead><tr><th>           Method</th><th>       Mean</th><th>    Error</th><th>   StdDev</th><th> Scaled</th><th>ScaledSD</th>
 </tr>
-</thead><tbody><tr><td>Managed</td><td>2.452 ns</td><td>0.0153 ns</td><td>0.0143 ns</td><td>1.00</td><td>0.00</td>
-</tr><tr><td>PInvoke</td><td>6.764 ns</td><td>0.0369 ns</td><td>0.0345 ns</td><td>2.76</td><td>0.02</td>
-</tr><tr><td>Delegate</td><td>12.554 ns</td><td>0.0582 ns</td><td>0.0544 ns</td><td>5.12</td><td>0.04</td>
-</tr><tr><td>CalliFixed</td><td>33.841 ns</td><td>0.1513 ns</td><td>0.1415 ns</td><td>13.80</td><td>0.10</td>
-</tr><tr><td>CalliCustomPin</td><td>36.470 ns</td><td>0.0852 ns</td><td>0.0712 ns</td><td>14.88</td><td>0.09</td>
-</tr><tr><td>CalliCustomPinWithLocal</td><td>34.348 ns</td><td>0.0514 ns</td><td>0.0456 ns</td><td>14.01</td><td>0.08</td>
-</tr><tr><td>CalliString</td><td>45,974,889.367 ns</td><td>228,532.5104 ns</td><td>213,769.4312 ns</td><td>18,752,236.53</td><td>135,324.81</td>
-</tr><tr><td>CalliByRef</td><td>85.654 ns</td><td>0.3039 ns</td><td>0.2694 ns</td><td>34.94</td><td>0.22</td>
+</thead><tbody><tr><td>Managed</td><td>1.794 ns</td><td>0.0064 ns</td><td>0.0056 ns</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>PInvoke</td><td>6.747 ns</td><td>0.0223 ns</td><td>0.0186 ns</td><td>3.76</td><td>0.02</td>
+</tr><tr><td>Delegate</td><td>11.782 ns</td><td>0.1838 ns</td><td>0.1719 ns</td><td>6.57</td><td>0.09</td>
+</tr><tr><td>CalliFixed</td><td>33.300 ns</td><td>0.2587 ns</td><td>0.2293 ns</td><td>18.56</td><td>0.14</td>
+</tr><tr><td>CalliCustomPin</td><td>33.428 ns</td><td>0.3923 ns</td><td>0.3477 ns</td><td>18.63</td><td>0.20</td>
+</tr><tr><td>CalliCustomPinWithLocal</td><td>33.363 ns</td><td>0.1435 ns</td><td>0.1199 ns</td><td>18.60</td><td>0.09</td>
+</tr><tr><td>CalliString</td><td>47,532,051.454 ns</td><td>740,476.2190 ns</td><td>692,641.8473 ns</td><td>26,492,895.52</td><td>381,480.09</td>
+</tr><tr><td>CalliByRef</td><td>86.939 ns</td><td>1.5797 ns</td><td>1.4004 ns</td><td>48.46</td><td>0.77</td>
 </tr></tbody></table>
 </body>
 </html>

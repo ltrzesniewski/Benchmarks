@@ -51,9 +51,50 @@
 </head><body><table><tbody>
 <tr><th colspan="2" style="text-align: left;">NativeInterop.NativeInteropStringNetFwkBench.PInvoke()</th><th></th></tr>
 <tr class="">
-<td></td><td title="00007ffe`488a6dd4 488b0c25a0933814 mov     rcx,qword ptr [143893A0h]"><pre><code>mov     rcx,qword ptr [143893A0h]</pre></code></td>
+<td></td><td title="00007ffe`488d6dd0 55              push    rbp"><pre><code>push    rbp</pre></code></td>
 </tr><tr class="">
-<td></td><td title="00007ffe`488a6ddc 48b8e04c8a48fe7f0000 mov rax,7FFE488A4CE0h"><pre><code>mov     rax,7FFE488A4CE0h</pre></code></td>
+<td></td><td title="00007ffe`488d6dd1 488bec          mov     rbp,rsp"><pre><code>mov     rbp,rsp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6dd4 488b0c25a093f713 mov     rcx,qword ptr [13F793A0h]"><pre><code>mov     rcx,qword ptr [13F793A0h]</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6ddc 48b8e04c8d48fe7f0000 mov rax,7FFE488D4CE0h"><pre><code>mov     rax,7FFE488D4CE0h</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6de6 5d              pop     rbp"><pre><code>pop     rbp</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6de7 48ffe0          jmp     rax"><pre><code>jmp     rax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6dea 0000            add     byte ptr [rax],al"><pre><code>add     byte ptr [rax],al</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6dec 1901            sbb     dword ptr [rcx],eax"><pre><code>sbb     dword ptr [rcx],eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6dee 0100            add     dword ptr [rax],eax"><pre><code>add     dword ptr [rax],eax</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6df0 015000          add     dword ptr [rax],edx"><pre><code>add     dword ptr [rax],edx</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6df3 004000          add     byte ptr [rax],al"><pre><code>add     byte ptr [rax],al</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6df6 0000            add     byte ptr [rax],al"><pre><code>add     byte ptr [rax],al</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6df8 00da            add     dl,bl"><pre><code>add     dl,bl</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6dfa 9a              ???"><pre><code>???</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6dfb 48              ???"><pre><code>???</pre></code></td>
+</tr><tr class="">
+<td></td><td title="00007ffe`488d6dfc fe              ???"><pre><code>???</pre></code></td>
+</tr><tr class="">
+<td></td><td id="0" class="reference" data-reference="M00_L00" title="00007ffe`488d6dfd 7f00            jg      00007ffe`488d6dff"><a href="#M00_L00"><pre><code>jg      M00_L00</pre></code></a></td>
+</tr><tr class="evenMap">
+<td id="M00_L00" class="label" data-label="M00_L00"><pre><code>M00_L00</pre></code></td>
+<td>&nbsp;</td></tr>
+<tr class="evenMap">
+<td></td><td title="00007ffe`488d6dff 005541          add     byte ptr [rbp+41h],dl"><pre><code>add     byte ptr [rbp+41h],dl</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488d6e02 57              push    rdi"><pre><code>push    rdi</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488d6e03 4156            push    r14"><pre><code>push    r14</pre></code></td>
+</tr><tr class="evenMap">
+<td></td><td title="00007ffe`488d6e05 4155            push    r13"><pre><code>push    r13</pre></code></td>
 </tr><tr><td colspan="{2}">&nbsp;</td></tr>
 <tr><td colspan="2"><b>Method got most probably inlined</b></td></tr>
 <tr><td colspan="2">NativeInterop.NativeInteropStringNetFwkBench.GetFirstCharPInvoke(System.String)</td></tr>
