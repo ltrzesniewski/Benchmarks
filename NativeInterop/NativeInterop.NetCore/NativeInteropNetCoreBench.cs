@@ -6,6 +6,7 @@ using InlineIL;
 
 namespace NativeInterop
 {
+    [ReturnValueValidator]
     [DisassemblyDiagnoser(printPrologAndEpilog: true)]
     public unsafe class NativeInteropNetCoreBench
     {

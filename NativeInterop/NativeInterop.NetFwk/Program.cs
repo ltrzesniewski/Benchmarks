@@ -6,8 +6,8 @@ namespace NativeInterop
     {
         private static void Main()
         {
-            BenchmarkHelper.ValidateAndRun<NativeInteropNetFwkBench>();
-            BenchmarkHelper.ValidateAndRun<NativeInteropStringNetFwkBench>();
+            BenchmarkHelper.Run<NativeInteropNetFwkBench>();
+            BenchmarkHelper.Run<NativeInteropStringNetFwkBench>();
         }
     }
 }
