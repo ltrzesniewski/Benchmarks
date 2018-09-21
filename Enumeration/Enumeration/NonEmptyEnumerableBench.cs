@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using BenchmarkDotNet.Attributes;
 
 namespace Enumeration
@@ -7,7 +8,18 @@ namespace Enumeration
     [ReturnValueValidator]
     public class NonEmptyEnumerableBench
     {
+        private static readonly int[] _array = Enumerable.Range(1, 10).ToArray();
+
         [Benchmark(Baseline = true)]
+        public int Array()
+        {
+            var sum = 0;
+            foreach (var i in _array)
+                sum += i;
+            return sum;
+        }
+
+        [Benchmark]
         public int WithoutInterface()
         {
             var sum = 0;

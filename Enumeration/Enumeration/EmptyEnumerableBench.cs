@@ -9,6 +9,15 @@ namespace Enumeration
     public class EmptyEnumerableBench
     {
         [Benchmark(Baseline = true)]
+        public int Array()
+        {
+            var sum = 0;
+            foreach (var i in System.Array.Empty<int>())
+                sum += i;
+            return sum;
+        }
+
+        [Benchmark]
         public int WithoutInterface()
         {
             var sum = 0;

@@ -2,7 +2,7 @@
 
 Compares stuff related to `IEnumerable<T>`.
 
-NOTE: `EmptyEnumerableBench` - both cases generate the same assembly, everything is optimized out, and BenchmarkDotNet has issues comparing empty cases.
+NOTE: `EmptyEnumerableBench` - both cases generate the same assembly, everything is optimized out.
 
 ## EmptyEnumerableBench
 
@@ -16,10 +16,11 @@ Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cor
 
 
 ```
-|           Method |      Mean |     Error |    StdDev | Scaled | ScaledSD |
-|----------------- |----------:|----------:|----------:|-------:|---------:|
-| WithoutInterface | 0.1036 ns | 0.0166 ns | 0.0147 ns |   1.00 |     0.00 |
-|   WithInterfaces | 0.0973 ns | 0.0242 ns | 0.0227 ns |   0.95 |     0.24 |
+|           Method |      Mean |     Error |    StdDev | Scaled |
+|----------------- |----------:|----------:|----------:|-------:|
+|            Array | 2.3652 ns | 0.0035 ns | 0.0031 ns |   1.00 |
+| WithoutInterface | 0.0898 ns | 0.0023 ns | 0.0020 ns |   0.04 |
+|   WithInterfaces | 0.0942 ns | 0.0013 ns | 0.0011 ns |   0.04 |
 
 ## NonEmptyEnumerableBench
 
@@ -35,6 +36,7 @@ Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cor
 ```
 |           Method |     Mean |     Error |    StdDev | Scaled |
 |----------------- |---------:|----------:|----------:|-------:|
-| WithoutInterface | 3.316 ns | 0.0123 ns | 0.0109 ns |   1.00 |
-|   WithInterfaces | 3.352 ns | 0.0232 ns | 0.0217 ns |   1.01 |
+|            Array | 6.011 ns | 0.0142 ns | 0.0133 ns |   1.00 |
+| WithoutInterface | 3.311 ns | 0.0092 ns | 0.0086 ns |   0.55 |
+|   WithInterfaces | 3.313 ns | 0.0056 ns | 0.0049 ns |   0.55 |
 
