@@ -6,8 +6,7 @@ namespace Enumeration
     {
         public static void Main()
         {
-            BenchmarkHelper.Run<EmptyEnumerableBench>();
-            BenchmarkHelper.Run<NonEmptyEnumerableBench>();
+            BenchmarkHelper.Run();
         }
     }
 }

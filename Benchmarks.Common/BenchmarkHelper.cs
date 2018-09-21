@@ -12,10 +12,10 @@ namespace Benchmarks.Common
 {
     public static class BenchmarkHelper
     {
-        public static void Run<TBenchmark>()
+        public static void Run()
         {
-            var summary = BenchmarkRunner.Run<TBenchmark>();
-            SaveSummary(summary);
+            foreach (var summary in BenchmarkSwitcher.FromAssembly(Assembly.GetEntryAssembly()).Run())
+                SaveSummary(summary);
         }
 
         private static void SaveSummary(Summary summary)

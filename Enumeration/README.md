@@ -18,8 +18,8 @@ Intel Core i7-7700K CPU 4.20GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cor
 ```
 |           Method |      Mean |     Error |    StdDev | Scaled | ScaledSD |
 |----------------- |----------:|----------:|----------:|-------:|---------:|
-| WithoutInterface | 0.1238 ns | 0.0077 ns | 0.0072 ns |   1.00 |     0.00 |
-|   WithInterfaces | 0.0976 ns | 0.0059 ns | 0.0055 ns |   0.79 |     0.06 |
+| WithoutInterface | 0.1036 ns | 0.0166 ns | 0.0147 ns |   1.00 |     0.00 |
+|   WithInterfaces | 0.0973 ns | 0.0242 ns | 0.0227 ns |   0.95 |     0.24 |
 
 ## NonEmptyEnumerableBench
 
