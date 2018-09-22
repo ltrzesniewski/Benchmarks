@@ -5,7 +5,7 @@ using BenchmarkDotNet.Attributes;
 namespace Enumeration
 {
     [ReturnValueValidator]
-    [RyuJitX64Job, RyuJitX86Job, LegacyJitX64Job, LegacyJitX86Job]
+    [RyuJitX64Job, LegacyJitX64Job, LegacyJitX86Job]
     [DisassemblyDiagnoser(printPrologAndEpilog: true)]
     public class EmptyEnumerableBench
     {
