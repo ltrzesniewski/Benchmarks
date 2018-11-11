@@ -1,8 +1,13 @@
 ﻿using System;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Toolchains.CsProj;
+using BenchmarkDotNet.Toolchains.DotNetCli;
 
 namespace MemCopy
 {
+    [Config(typeof(Config))]
     public unsafe class SpanCopyBench
     {
         private const int bufferSize = 4 * 1024;
@@ -35,6 +40,15 @@ namespace MemCopy
             fixed (byte* src = source, dst = dest)
             {
                 Buffer.MemoryCopy(src, dst, dest.Length, source.Length);
+            }
+        }
+
+        private class Config : ManualConfig
+        {
+            public Config()
+            {
+                Add(Job.Default.With(CsProjCoreToolchain.From(NetCoreAppSettings.NetCoreApp21)));
+                Add(Job.Default.With(CsProjCoreToolchain.From(NetCoreAppSettings.NetCoreApp30)));
             }
         }
     }
