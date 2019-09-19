@@ -5,6 +5,7 @@
 *.suo
 
 .vs/
+.idea/
 .vscode/
 [Bb]in/
 [Oo]bj/
